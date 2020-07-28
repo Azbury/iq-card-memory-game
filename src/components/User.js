@@ -5,7 +5,7 @@ class User extends Component {
         const { currentUser } = this.props
         return (
             <div className="current-user">
-                {currentUser}
+                <h2>Username: {currentUser}</h2>
             </div>
         )
     }
