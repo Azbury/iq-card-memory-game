@@ -41,8 +41,8 @@
   margin-bottom: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  height: 250px;
-  width: 250px
+  height: 200px;
+  width: 200px
 }
 
 .cards-container {
@@ -60,4 +60,8 @@
 
 .cards-container4 {
   display: flex;
+}
+
+.big-card-container {
+  margin-left: 22.5%
 }
