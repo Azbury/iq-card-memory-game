@@ -3,6 +3,7 @@ export const cuidFn = cuid;
 
 export default function manageUsers(state = {
   users: [],
+  currentUser: ''
 }, action) {
   switch (action.type) {
 
@@ -11,7 +12,8 @@ export default function manageUsers(state = {
       const user = { username: action.username };
       return {
         ...state,
-        users: [ ...state.users, user]
+        users: [ ...state.users, user],
+        currentUser: action.username
       }
 
     default:
