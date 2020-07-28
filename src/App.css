@@ -37,18 +37,6 @@
   display:block;
 }
 
-.cards-container2 {
-  display: flex;
-}
-
-.cards-container3 {
-  display: flex;
-}
-
-.cards-container4 {
-  display: flex;
-}
-
 .big-card-container {
   display: flex; 
   align-items: center; 
