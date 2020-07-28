@@ -39,4 +39,25 @@
 
 .picture-card {
   margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 250px;
+  width: 250px
+}
+
+.cards-container {
+  display:flex; 
+  flex-direction:row;
+}
+
+.cards-container2 {
+  display: flex;
+}
+
+.cards-container3 {
+  display: flex;
+}
+
+.cards-container4 {
+  display: flex;
 }

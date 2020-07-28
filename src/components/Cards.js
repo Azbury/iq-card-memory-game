@@ -4,13 +4,30 @@ import Card from './PictureCard'
 class Cards extends Component {
 
     render() {
-      return(
-        <div>
-          <Card />
-          <Card />
-        </div>
-      )
+        
+        let cards = []
+
+        for (let i = 0; i < 5; i++) {
+            cards.push(<Card />)
+        }
+
+        return(
+            <div className="big-card-container">
+                <div className="cards-container">
+                    {cards}
+                </div>
+                <div className="cards-container2">
+                    {cards}
+                </div>
+                <div className="cards-container3">
+                    {cards}
+                </div>
+                <div className="cards-container4">
+                    {cards}
+                </div>
+            </div>
+        )
     }
 }
   
-  export default Cards;
+export default Cards;
