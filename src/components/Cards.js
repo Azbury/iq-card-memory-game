@@ -7,7 +7,7 @@ class Cards extends Component {
         
         let cards = []
 
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 4; i++) {
             cards.push(<Card />)
         }
 
@@ -16,13 +16,16 @@ class Cards extends Component {
                 <div className="cards-container">
                     {cards}
                 </div>
-                <div className="cards-container2">
+                <div className="cards-container">
                     {cards}
                 </div>
-                <div className="cards-container3">
+                <div className="cards-container">
                     {cards}
                 </div>
-                <div className="cards-container4">
+                <div className="cards-container">
+                    {cards}
+                </div>
+                <div className="cards-container">
                     {cards}
                 </div>
             </div>
