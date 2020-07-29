@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from './PictureCard'
+import FlipCard from './FlipCard'
 
 class Cards extends Component {
 
@@ -8,7 +8,7 @@ class Cards extends Component {
         let cards = []
 
         for (let i = 0; i < 4; i++) {
-            cards.push(<Card />)
+            cards.push(<FlipCard />)
         }
 
         return(
