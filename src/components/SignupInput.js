@@ -13,18 +13,27 @@ class SignupInput extends Component {
   }
 
   handleOnSubmit(event) {
-    event.preventDefault();
-    this.props.addUser(this.state.username);
+    event.preventDefault()
+    this.props.addUser(this.state.username)
     this.setState({
       username: '',
       newUserButton: 'active'
-    });
+    })
+  }
+
+  handleClick(event) {
+    event.preventDefault()
+    this.props.newUser(this.state.username)
+    this.setState({
+      username: '',
+      newUserButton: ''
+    })
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={(event) => this.handleOnSubmit(event)}>
+        <form className={this.state.newUserButton === "active" ? "hidden" : ""} onSubmit={(event) => this.handleOnSubmit(event)}>
           <p>Please enter your username</p>
           <input
             type="text"
@@ -32,7 +41,7 @@ class SignupInput extends Component {
             onChange={(event) => this.handleOnChange(event)} />
           <input type="submit" />
         </form>
-        <button className={this.state.newUserButton === "active" ? "" : "hidden"}>New User</button>
+        <button className={this.state.newUserButton === "active" ? "" : "hidden"} onClick={(event) => this.handleClick(event)}>New User</button>
       </div>
     );
   }

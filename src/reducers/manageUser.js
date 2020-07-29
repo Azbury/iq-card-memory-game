@@ -1,5 +1,4 @@
-import cuid from 'cuid';
-export const cuidFn = cuid;
+import uuid from "uuid";
 
 export default function manageUsers(state = {
   users: [],
@@ -10,12 +9,21 @@ export default function manageUsers(state = {
 
     case 'ADD_USER':
 
-      const user = { username: action.username };
+      const user = { username: action.username, iq: 100, id: uuid() };
       return {
         ...state,
         users: [ ...state.users, user],
-        currentUser: action.username,
+        currentUser: user.id,
         submitted: true
+      }
+    
+    case 'NEW_USER_BUTTON':
+
+      return {
+        ...state,
+        users: [...state.users],
+        currentUser: '',
+        submitted: false
       }
 
     default:

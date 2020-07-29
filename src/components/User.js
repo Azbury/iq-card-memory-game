@@ -5,7 +5,8 @@ class User extends Component {
         const { currentUser } = this.props
         return (
             <div className="current-user">
-                <h2>Username: {currentUser}</h2>
+                <h2>Username: {currentUser.username}</h2>
+                <h2>IQ: {currentUser.iq}</h2>
             </div>
         )
     }
