@@ -19,7 +19,7 @@ class FlipCard extends Component {
     return (
       <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
           <div>
-          front
+            <img src="https://unsplash.com/photos/8Myh76_3M2U"></img>
           <button onClick={this.handleClick}>Click to flip</button>
           </div>
  
