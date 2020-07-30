@@ -62,3 +62,15 @@
   border-style: solid;
   padding: 25px;
 }
+
+.dog-pic {
+  border-radius: 8px;
+  height: 200px;
+  width: 200px;
+}
+
+.cat-pic {
+  border-radius: 8px;
+  height: 200px;
+  width: 200px;
+}
