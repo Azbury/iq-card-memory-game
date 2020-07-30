@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import ReactCardFlip from 'react-card-flip';
-import FrontCard from './FrontCard'
-import BackCard from './BackCard'
 
 class FlipCard extends Component {
  constructor() {
