@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import ReactCardFlip from 'react-card-flip';
-import Dog from '../pictures/questionmark.png'
+import QuestionMark from '../pictures/questionmark.png'
 const Animal = require.context('./animals', true)
 
 
@@ -24,7 +24,7 @@ class FlipCard extends Component {
     return (
       <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
           <div>
-            <img className="dog-pic" src={Dog}></img>
+            <img className="dog-pic" src={QuestionMark}></img>
           <button onClick={this.handleClick}>Click to flip</button>
           </div>
  
