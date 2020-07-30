@@ -5,11 +5,9 @@ class Cards extends Component {
 
     render() {
         
-        let cards = []
+        let animals = ['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']
 
-        for (let i = 0; i < 4; i++) {
-            cards.push(<FlipCard />)
-        }
+        let cards = animals.map(animal => <FlipCard animal={animal}/>)
 
         return(
             <div className="big-card-container">

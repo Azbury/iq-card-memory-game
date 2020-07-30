@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import ReactCardFlip from 'react-card-flip';
-import Dog from '../questionmark.png'
-import Cat from '../cat.png'
+import Dog from '../pictures/questionmark.png'
+const Animal = require.context('./animals', true)
+
 
 class FlipCard extends Component {
+  
  constructor() {
     super();
       this.state = {
@@ -11,7 +13,8 @@ class FlipCard extends Component {
     };
     this.handleClick = this.handleClick.bind(this);
   }
- 
+
+
   handleClick(e) {
     e.preventDefault();
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
@@ -26,7 +29,7 @@ class FlipCard extends Component {
           </div>
  
           <div>
-            <img className="cat-pic" src={Cat}></img>
+            <img className="cat-pic" src={Animal(`./${this.props.animal}.png`)}></img>
           <button onClick={this.handleClick}>Click to flip</button>
           </div>
       </ReactCardFlip>
