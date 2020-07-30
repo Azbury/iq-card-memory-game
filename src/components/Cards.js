@@ -7,7 +7,7 @@ class Cards extends Component {
         
         let animals = ['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']
 
-        let cards = animals.map(animal => <FlipCard animal={animal}/>)
+        let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index}/>)
         let finalCards = [...cards, ...cards]
 
         return(

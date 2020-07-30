@@ -29,7 +29,7 @@ class FlipCard extends Component {
           </div>
  
           <div>
-            <img className="cat-pic" src={Animal(`./${this.props.animal}.png`)}></img>
+            <img id={this.props.id} className="cat-pic" src={Animal(`./${this.props.animal}.png`)}></img>
           <button onClick={this.handleClick}>Click to flip</button>
           </div>
       </ReactCardFlip>
