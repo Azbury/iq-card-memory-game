@@ -20,18 +20,18 @@ class FlipCard extends Component {
   render() {
     return (
       <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
-          <FrontCard>
-          This is the front of the card.
+          <div>
+          front
           <button onClick={this.handleClick}>Click to flip</button>
-          </FrontCard>
+          </div>
  
-          <BackCard>
-          This is the back of the card.
+          <div>
+          back
           <button onClick={this.handleClick}>Click to flip</button>
-          </BackCard>
+          </div>
       </ReactCardFlip>
     )
   }
-};
+}
 
 export default FlipCard;
