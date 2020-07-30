@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import ReactCardFlip from 'react-card-flip';
-import Dog from '../dog.png'
+import Dog from '../questionmark.png'
 import Cat from '../cat.png'
 
 class FlipCard extends Component {
