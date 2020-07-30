@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import manageUser from './reducers/manageUser'
-
+import Particles from 'particlesjs'
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
@@ -16,6 +16,24 @@ ReactDOM.render(
     </Provider>,
   document.getElementById('root')
 );
+
+window.onload= function() {
+  Particles.init({
+  // normal options
+  selector: '.background',
+  
+  // options for breakpoints
+  
+      breakpoint: 768,
+        maxParticles: 200,
+        color: '#48F2E3',
+        connectParticles: true
+      
+
+// disables particles.js
+  
+});
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
