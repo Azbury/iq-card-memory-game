@@ -8,23 +8,39 @@ class Cards extends Component {
         let animals = ['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']
 
         let cards = animals.map(animal => <FlipCard animal={animal}/>)
+        let finalCards = [...cards, ...cards]
 
         return(
             <div className="big-card-container">
                 <div className="cards-container">
-                    {cards}
+                    {finalCards[0]}
+                    {finalCards[1]}
+                    {finalCards[2]}
+                    {finalCards[3]}
                 </div>
                 <div className="cards-container">
-                    {cards}
+                    {finalCards[4]}
+                    {finalCards[5]}
+                    {finalCards[6]}
+                    {finalCards[7]}
                 </div>
                 <div className="cards-container">
-                    {cards}
+                    {finalCards[8]}
+                    {finalCards[9]}
+                    {finalCards[10]}
+                    {finalCards[11]}
                 </div>
                 <div className="cards-container">
-                    {cards}
+                    {finalCards[12]}
+                    {finalCards[13]}
+                    {finalCards[14]}
+                    {finalCards[15]}
                 </div>
                 <div className="cards-container">
-                    {cards}
+                    {finalCards[16]}
+                    {finalCards[17]}
+                    {finalCards[18]}
+                    {finalCards[19]}
                 </div>
             </div>
         )
