@@ -9,8 +9,7 @@ class FlipCard extends Component {
  constructor() {
     super();
       this.state = {
-      isFlipped: false,
-      value: 3
+      isFlipped: false
     };
     this.handleClick = this.handleClick.bind(this);
   }

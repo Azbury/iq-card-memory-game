@@ -23,7 +23,11 @@ class Cards extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        return false
+        if (nextProps.flippedCards[0] === nextProps.flippedCards[1])
+            return true
+        else {
+            return false
+        }
     }
 
     render() {

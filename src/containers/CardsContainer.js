@@ -11,13 +11,13 @@ class CardsContainer extends Component {
               <h1>IQ Card Memory Game</h1>
               <SignupInput addUser={this.props.addUser} newUser={this.props.newUserButton}/>
               {this.props.submitted && <User currentUser={this.props.users.find(user => user.id === this.props.currentUser)}/>}
-              <Cards isMatch={this.props.isMatch}/>
+              <Cards isMatch={this.props.isMatch} flippedCards={this.props.flippedCards}/>
             </div>
         )
     }
 }
 
-const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, users: state.users })
+const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, users: state.users, flippedCards: state.flippedCards })
 
 const mapDispatchToProps = dispatch => ({
   addUser: username => dispatch({type: 'ADD_USER', username}),
