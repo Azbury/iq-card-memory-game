@@ -3,13 +3,28 @@ import FlipCard from './FlipCard'
 
 class Cards extends Component {
 
+    shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+      
+        while (0 !== currentIndex) {
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+      
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+      
+        return array;
+    }
+
     render() {
         
         let animals = ['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']
 
         let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index}/>)
-        let finalCards = [...cards, ...cards]
-
+        let finalCards = this.shuffle([...cards, ...cards])
+        
         return(
             <div className="big-card-container">
                 <div className="cards-container">
