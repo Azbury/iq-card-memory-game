@@ -9,7 +9,8 @@ class FlipCard extends Component {
  constructor() {
     super();
       this.state = {
-      isFlipped: false
+      isFlipped: false,
+      value: 3
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -17,10 +18,9 @@ class FlipCard extends Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.props.isMatch(this.props.id)
-    this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+    this.setState(prevState => ({ isFlipped: !prevState.isFlipped}));
   }
- 
+
   render() {
     return (
       <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">

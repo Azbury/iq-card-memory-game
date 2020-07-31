@@ -3,6 +3,10 @@ import FlipCard from './FlipCard'
 
 class Cards extends Component {
 
+    state={
+        flippedCard: 0
+    }
+
     shuffle(array) {
         var currentIndex = array.length, temporaryValue, randomIndex;
       
@@ -17,6 +21,8 @@ class Cards extends Component {
       
         return array;
     }
+
+    
 
     render() {
         
