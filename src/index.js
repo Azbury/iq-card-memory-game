@@ -26,7 +26,7 @@ window.onload= function() {
   
       breakpoint: 768,
         maxParticles: 200,
-        color: '#48F2E3',
+        color: ['#DC143C','00FF00'],
         connectParticles: true
       
 
