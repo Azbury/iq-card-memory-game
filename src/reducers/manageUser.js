@@ -34,7 +34,7 @@ export default function manageUsers(state = {
       } else if (state.flippedCard === action.imageid) {
         newCard = -2
       } else {
-        newCard = -3
+        newCard = -1
       }
 
       return {

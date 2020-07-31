@@ -22,7 +22,9 @@ class Cards extends Component {
         return array;
     }
 
-    
+    shouldComponentUpdate(nextProps, nextState) {
+        return false
+    }
 
     render() {
         
