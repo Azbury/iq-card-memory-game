@@ -22,7 +22,7 @@ class Cards extends Component {
         
         let animals = ['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']
 
-        let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index}/>)
+        let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index} isMatch={this.props.isMatch}/>)
         let finalCards = this.shuffle([...cards, ...cards])
         
         return(

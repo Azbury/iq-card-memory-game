@@ -3,7 +3,8 @@ import {v1 as uuid} from "uuid";
 export default function manageUsers(state = {
   users: [],
   currentUser: '',
-  submitted: false
+  submitted: false,
+  flippedCard: -1
 }, action) {
   switch (action.type) {
 
@@ -24,6 +25,24 @@ export default function manageUsers(state = {
         users: [...state.users],
         currentUser: '',
         submitted: false
+      }
+    
+    case 'IS_MATCH':
+      let newCard = 0
+      if (state.flippedCard === -1) {
+        newCard = action.imageid
+      } else if (state.flippedCard === action.imageid) {
+        newCard = -2
+      } else {
+        newCard = -3
+      }
+
+      return {
+        ...state,
+        users: [...state.users],
+        currentUser: state.currentUser,
+        submitted: state.submitted,
+        flippedCard: newCard
       }
 
     default:
