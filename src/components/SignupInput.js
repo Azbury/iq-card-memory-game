@@ -30,6 +30,7 @@ class SignupInput extends Component {
     })
   }
 
+  //set it up so once a usse submits their username it loads the cards so i can load them into state so then they can be removed when i get matches
   render() {
     return (
       <div>
