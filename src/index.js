@@ -19,19 +19,10 @@ ReactDOM.render(
 
 window.onload= function() {
   Particles.init({
-  // normal options
-  selector: '.background',
-  
-  // options for breakpoints
-  
-      breakpoint: 768,
-        maxParticles: 200,
-        color: ['#DC143C','00FF00'],
-        connectParticles: true
-      
-
-// disables particles.js
-  
+    selector: '.background',
+    maxParticles: 200,
+    color: ['#DC143C','00FF00'],
+    connectParticles: true
 });
 }
 
