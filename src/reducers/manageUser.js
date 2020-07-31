@@ -4,7 +4,8 @@ export default function manageUsers(state = {
   users: [],
   currentUser: '',
   submitted: false,
-  flippedCards: []
+  flippedCards: [],
+  removeCards: false
 }, action) {
   switch (action.type) {
 
@@ -30,8 +31,11 @@ export default function manageUsers(state = {
     case 'IS_MATCH':
 
       let theCards = []
-    
-      if (state.flippedCards.length === 2) {
+      let toBeRemoved = false
+      if (state.flippedCards.length === 1 && state.flippedCards[0] === action.imageid) {
+        theCards = [...state.flippedCards, action.imageid]
+        toBeRemoved = true
+      } else if (state.flippedCards.length === 2) {
         theCards = []
       } else {
         theCards = [...state.flippedCards, action.imageid]
@@ -42,7 +46,8 @@ export default function manageUsers(state = {
         users: [...state.users],
         currentUser: state.currentUser,
         submitted: state.submitted,
-        flippedCards: theCards
+        flippedCards: theCards,
+        removeCards: toBeRemoved
       }
 
     default:

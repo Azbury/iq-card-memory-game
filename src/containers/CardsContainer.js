@@ -6,27 +6,19 @@ import { connect } from 'react-redux'
 
 class CardsContainer extends Component {
 
-    removeCards(flippedCards) {
-      if (flippedCards[0] === flippedCards[1]) {
-        return true
-      } else {
-        return false
-      }
-    }
-
     render() {
         return (
             <div className='final-container'>
               <h1>IQ Card Memory Game</h1>
               <SignupInput addUser={this.props.addUser} newUser={this.props.newUserButton}/>
               {this.props.submitted && <User currentUser={this.props.users.find(user => user.id === this.props.currentUser)}/>}
-              <Cards isMatch={this.props.isMatch} flippedCards={this.props.flippedCards} removeCards={this.removeCards(this.props.flippedCards)}/>
+              <Cards isMatch={this.props.isMatch} flippedCards={this.props.flippedCards} removeCards={this.props.removeCards}/>
             </div>
         )
     }
 }
 
-const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, users: state.users, flippedCards: state.flippedCards })
+const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, users: state.users, flippedCards: state.flippedCards, removeCards: state.removeCards})
 
 const mapDispatchToProps = dispatch => ({
   addUser: username => dispatch({type: 'ADD_USER', username}),

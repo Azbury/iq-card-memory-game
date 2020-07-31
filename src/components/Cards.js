@@ -4,7 +4,7 @@ import FlipCard from './FlipCard'
 class Cards extends Component {
 
     state={
-        flippedCard: 0
+        cards: []
     }
 
     shuffle(array) {
@@ -23,11 +23,11 @@ class Cards extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        //if (nextProps.flippedCards[0] === nextProps.flippedCards[1])
-        //    return true
-        //else {
+        if (nextProps.flippedCards[0] === nextProps.flippedCards[1] && nextProps.flippedCards.length === 2)
+            return true
+        else {
             return false
-        //}
+        }
     }
 
     render() {
@@ -36,6 +36,9 @@ class Cards extends Component {
 
         let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index} isMatch={this.props.isMatch} flippedCards={this.props.flippedCards} removeCards={this.props.removeCards}/>)
         let finalCards = this.shuffle([...cards, ...cards])
+        if (this.props.removeCards === true) {
+            finalCards = finalCards.filter(card => card.id !== this.props.flippedCards[0])
+        }
         
         return(
             <div className="big-card-container">
