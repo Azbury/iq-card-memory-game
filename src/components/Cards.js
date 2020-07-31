@@ -23,18 +23,18 @@ class Cards extends Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        if (nextProps.flippedCards[0] === nextProps.flippedCards[1])
-            return true
-        else {
+        //if (nextProps.flippedCards[0] === nextProps.flippedCards[1])
+        //    return true
+        //else {
             return false
-        }
+        //}
     }
 
     render() {
         
         let animals = ['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']
 
-        let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index} isMatch={this.props.isMatch}/>)
+        let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index} isMatch={this.props.isMatch} flippedCards={this.props.flippedCards} removeCards={this.props.removeCards}/>)
         let finalCards = this.shuffle([...cards, ...cards])
         
         return(

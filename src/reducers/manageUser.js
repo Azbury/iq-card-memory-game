@@ -30,7 +30,7 @@ export default function manageUsers(state = {
     case 'IS_MATCH':
 
       let theCards = []
-
+    
       if (state.flippedCards.length === 2) {
         theCards = []
       } else {

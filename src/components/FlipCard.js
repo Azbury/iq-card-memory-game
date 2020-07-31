@@ -23,7 +23,7 @@ class FlipCard extends Component {
 
   render() {
     return (
-      <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
+      <ReactCardFlip className={this.props.removeCards === "true" ? "hidden" : ""} isFlipped={this.state.isFlipped} flipDirection="vertical">
           <div>
             <img className="dog-pic" src={QuestionMark}></img>
           <button onClick={this.handleClick}>Click to flip</button>
