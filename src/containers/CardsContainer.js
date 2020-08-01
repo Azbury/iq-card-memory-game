@@ -12,7 +12,7 @@ class CardsContainer extends Component {
               <h1>IQ Card Memory Game</h1>
               <SignupInput addUser={this.props.addUser} newUser={this.props.newUserButton} addCards={this.props.addCards}/>
               {this.props.submitted && <User currentUser={this.props.users.find(user => user.id === this.props.currentUser)}/>}
-              {this.props.submitted && <Cards isMatch={this.props.isMatch} flippedCards={this.props.flippedCards} removeCards={this.props.removeCards} currentCards={this.props.currentCards}/>}
+              {this.props.gameStarted && <Cards isMatch={this.props.isMatch} flippedCards={this.props.flippedCards} removeCards={this.props.removeCards} currentCards={this.props.currentCards}/>}
             </div>
         )
     }
@@ -20,7 +20,9 @@ class CardsContainer extends Component {
 
 //create new container for starting game
 
-const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, users: state.users, flippedCards: state.flippedCards, removeCards: state.removeCards})
+const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, users: state.users, flippedCards: state.flippedCards, removeCards: state.removeCards,
+                                    gameStarted: state.gameStarted
+                                  })
 
 const mapDispatchToProps = dispatch => ({
   addUser: username => dispatch({type: 'ADD_USER', username}),
