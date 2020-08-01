@@ -20,8 +20,8 @@ ReactDOM.render(
 window.onload= function() {
   Particles.init({
     selector: '.background',
-    maxParticles: 200,
-    color: ['#DC143C','00FF00'],
+    maxParticles: 300,
+    color: ['#DC143C','00FF00', 'FFFF00', '008B8B'],
     connectParticles: true
 });
 }
