@@ -23,7 +23,8 @@ const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: s
 const mapDispatchToProps = dispatch => ({
   addUser: username => dispatch({type: 'ADD_USER', username}),
   newUserButton: username => dispatch({type: 'NEW_USER_BUTTON', username}),
-  isMatch: imageid => dispatch({type: 'IS_MATCH', imageid})
+  isMatch: imageid => dispatch({type: 'IS_MATCH', imageid}),
+  addCards: cards => dispatch({type: 'ADD_CARDS', cards})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardsContainer)

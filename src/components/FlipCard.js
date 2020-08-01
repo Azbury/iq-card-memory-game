@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component} from 'react';
 import ReactCardFlip from 'react-card-flip';
 import QuestionMark from '../pictures/questionmark.png'
 const Animal = require.context('./animals', true)
@@ -25,12 +25,12 @@ class FlipCard extends Component {
     return (
       <ReactCardFlip className={this.props.removeCards === "true" ? "hidden" : ""} isFlipped={this.state.isFlipped} flipDirection="vertical">
           <div>
-            <img className="dog-pic" src={QuestionMark}></img>
+            <img className="dog-pic" src={QuestionMark} alt={'question mark'}></img>
           <button onClick={this.handleClick}>Click to flip</button>
           </div>
  
           <div>
-            <img id={this.props.id} className="cat-pic" src={Animal(`./${this.props.animal}.png`)}></img>
+            <img id={this.props.id} className="cat-pic" src={Animal(`./${this.props.animal}.png`)} alt={'pic'}></img>
           <button onClick={this.handleClick}>Click to flip</button>
           </div>
       </ReactCardFlip>
