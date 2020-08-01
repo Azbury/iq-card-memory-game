@@ -6,7 +6,7 @@ export default function manageUsers(state = {
   submitted: false,
   flippedCards: [],
   removeCards: false,
-  cards: []
+  currentCards: []
 }, action) {
   switch (action.type) {
 
