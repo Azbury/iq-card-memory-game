@@ -59,6 +59,8 @@
   margin-top: 10px;
   height: 200px;
   width: 200px;
+  border-style: solid;
+  border-color: yellow;
   padding: 25px;
 }
 
