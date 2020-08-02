@@ -34,9 +34,11 @@ export default function manageUsers(state = {
 
       let theCards = []
       let toBeRemoved = false
+      let cardsLeftOnField = state.currentCards
       if (state.flippedCards.length === 1 && state.flippedCards[0] === action.imageid) {
         theCards = [...state.flippedCards, action.imageid]
         toBeRemoved = true
+        cardsLeftOnField = cardsLeftOnField.filter(e => e !== action.imageid)
       } else if (state.flippedCards.length === 2) {
         theCards = []
       } else {
@@ -49,7 +51,8 @@ export default function manageUsers(state = {
         currentUser: state.currentUser,
         submitted: state.submitted,
         flippedCards: theCards,
-        removeCards: toBeRemoved
+        removeCards: toBeRemoved,
+        currentCards: cardsLeftOnField
       }
 
     case 'ADD_CARDS':
