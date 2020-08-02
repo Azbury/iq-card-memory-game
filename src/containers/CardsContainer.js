@@ -3,6 +3,7 @@ import Cards from '../components/Cards'
 import SignupInput from '../components/SignupInput'
 import User from '../components/User'
 import { connect } from 'react-redux'
+import StartGameInput from '../components/StartGameInput'
 
 class CardsContainer extends Component {
 
@@ -12,6 +13,7 @@ class CardsContainer extends Component {
               <h1>IQ Card Memory Game</h1>
               <SignupInput addUser={this.props.addUser} newUser={this.props.newUserButton} addCards={this.props.addCards}/>
               {this.props.submitted && <User currentUser={this.props.users.find(user => user.id === this.props.currentUser)}/>}
+              {this.props.submitted && <StartGameInput addCards={this.props.addCards}/>}
               {this.props.gameStarted && <Cards isMatch={this.props.isMatch} flippedCards={this.props.flippedCards} removeCards={this.props.removeCards} currentCards={this.props.currentCards}/>}
             </div>
         )
