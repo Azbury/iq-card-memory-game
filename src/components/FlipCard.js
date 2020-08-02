@@ -21,6 +21,8 @@ class FlipCard extends Component {
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped}));
   }
 
+  //next step is to make it so when to cards match they disappear now, just take them out of the state when 2 cards match now
+
   render() {
     return (
       <ReactCardFlip className={this.props.removeCards === "true" ? "hidden" : ""} isFlipped={this.state.isFlipped} flipDirection="vertical">
