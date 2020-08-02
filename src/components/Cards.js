@@ -32,13 +32,10 @@ class Cards extends Component {
 
     render() {
         
-        let animals = ['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']
+        let animals = this.props.currentCards
 
         let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index} isMatch={this.props.isMatch} flippedCards={this.props.flippedCards} removeCards={this.props.removeCards}/>)
-        let finalCards = this.shuffle([...cards, ...cards])
-        if (this.props.removeCards === true) {
-            finalCards = finalCards.filter(card => card.id !== this.props.flippedCards[0])
-        }
+        let finalCards = cards
         
         return(
             <div className="big-card-container">

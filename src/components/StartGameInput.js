@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class StartGameInput extends Component {
 
     state={
-        cards:['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']
+        cards:this.shuffle(['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger', 'camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger'])
     }
 
     shuffle(array) {
@@ -22,11 +22,8 @@ class StartGameInput extends Component {
         return array;
     }
 
-    handleOnSubmit(event) {
+    handleSubmit(event) {
         event.preventDefault()
-        this.setState({
-            cards: this.shuffle([...this.state.cards, this.state.cards])
-        })
         this.props.addCards(this.state.cards)
     }
 

@@ -52,6 +52,13 @@ export default function manageUsers(state = {
         removeCards: toBeRemoved
       }
 
+    case 'ADD_CARDS':
+
+      return {
+        ...state,
+        currentCards: action.cards,
+        gameStarted: true
+      }
     default:
       return state;
 

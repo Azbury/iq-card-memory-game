@@ -17,7 +17,7 @@ class FlipCard extends Component {
 
   handleClick(e) {
     e.preventDefault();
-    this.props.isMatch(this.props.id)
+    this.props.isMatch(this.props.animal)
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped}));
   }
 
