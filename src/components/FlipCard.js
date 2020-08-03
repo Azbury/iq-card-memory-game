@@ -3,17 +3,16 @@ import ReactCardFlip from 'react-card-flip';
 import QuestionMark from '../pictures/questionmark.png'
 const Animal = require.context('./animals', true)
 
-
 class FlipCard extends Component {
-  
- constructor() {
+
+  constructor(props) {
     super();
+    const { isFlipped } = props
       this.state = {
-      isFlipped: true
+      isFlipped: isFlipped
     };
     this.handleClick = this.handleClick.bind(this);
   }
-
 
   handleClick(e) {
     e.preventDefault();

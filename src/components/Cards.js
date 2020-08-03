@@ -3,27 +3,28 @@ import FlipCard from './FlipCard'
 
 class Cards extends Component {
 
-    state={
-        cards: []
+    state = {
+        cards: [],
+        isFlipped: false
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        if (nextProps.flippedCards[0] === nextProps.flippedCards[1] && nextProps.flippedCards.length === 2)
-            return true
-        else {
-            return false
-        }
+    lookAtCards(event) {
+        event.preventDefault()
+        this.setState({isFlipped: true})
     }
 
     render() {
         
         let animals = this.props.currentCards
 
-        let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index} isMatch={this.props.isMatch} flippedCards={this.props.flippedCards} removeCards={this.props.removeCards}/>)
+        let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index} isMatch={this.props.isMatch} isFlipped={this.state.isFlipped}/>)
         let finalCards = cards
         
         return(
             <div className="big-card-container">
+                <form className="look-at-cards" onSubmit={(event) => this.lookAtCards(event)}>
+                    <input type="submit" value="Look at Cards"/>
+                </form>
                 <div className="cards-container">
                     {finalCards[0]}
                     {finalCards[1]}
