@@ -7,21 +7,6 @@ class Cards extends Component {
         cards: []
     }
 
-    shuffle(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
-      
-        while (0 !== currentIndex) {
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
-      
-          temporaryValue = array[currentIndex];
-          array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
-        }
-      
-        return array;
-    }
-
     shouldComponentUpdate(nextProps, nextState) {
         if (nextProps.flippedCards[0] === nextProps.flippedCards[1] && nextProps.flippedCards.length === 2)
             return true
