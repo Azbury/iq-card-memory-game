@@ -7,7 +7,8 @@ export default function manageUsers(state = {
   flippedCards: [],
   removeCards: false,
   currentCards: [],
-  gameStarted: false
+  gameStarted: false,
+  shouldCardsBeFlipped: false
 }, action) {
   switch (action.type) {
 
@@ -64,6 +65,14 @@ export default function manageUsers(state = {
         currentCards: action.cards,
         gameStarted: true
       }
+
+    case 'FLIP_CARDS':
+
+      return {
+        ...state,
+        shouldCardsBeFlipped: true
+      }
+
     default:
       return state;
 
