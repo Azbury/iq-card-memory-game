@@ -4,7 +4,7 @@ import QuestionMark from '../pictures/questionmark.png'
 const Animal = require.context('./animals', true)
 
 class FlipCard extends Component {
-
+  //the constructor is only called at the creation of the component so i can not use that to update the state from the props of Cards.js
   constructor(props) {
     super(props);
     const { isFlipped } = props
