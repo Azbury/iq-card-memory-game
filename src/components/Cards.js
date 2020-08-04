@@ -26,10 +26,11 @@ class Cards extends Component {
         //cards need to be able to flip on their own individual not just being set from the state of this component
 
         return(
-            <div className="big-card-container">
+            <div>
                 <form onSubmit={(event) => this.flipCardsBack(event)} className={this.state.hideFlipCardsBack === false ? "" : "hidden"}>
                     <input type="submit" value="Start Game"/>
                 </form>
+            <div className="big-card-container">
                 <div className="cards-container">
                     {finalCards[0]}
                     {finalCards[1]}
@@ -60,6 +61,7 @@ class Cards extends Component {
                     {finalCards[18]}
                     {finalCards[19]}
                 </div>
+            </div>
             </div>
         )
     }
