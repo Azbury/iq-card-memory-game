@@ -31,7 +31,7 @@ class StartGameInput extends Component {
         return (
             <div>
                 <form onSubmit={(event) => this.handleSubmit(event)}>
-                    <input type="submit" value="Start Game"/>
+                    <input type="submit" value="Look At Cards"/>
                 </form>
             </div>
         )

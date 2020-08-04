@@ -4,7 +4,7 @@ import FlipCard from './FlipCard'
 class Cards extends Component {
 
     state = {
-        isFlipped: false
+        isFlipped: true
     }
 
     lookAtCards(event) {
@@ -21,11 +21,6 @@ class Cards extends Component {
         
         return(
             <div className="big-card-container">
-                <h2>{cards.isFlipped}</h2>
-                <h1>{this.state.isFlipped.toString()}</h1>
-                <form className="look-at-cards" onSubmit={(event) => this.lookAtCards(event)}>
-                    <input type="submit" value="Look at Cards"/>
-                </form>
                 <div className="cards-container">
                     {finalCards[0]}
                     {finalCards[1]}
