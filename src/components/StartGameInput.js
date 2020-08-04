@@ -32,7 +32,7 @@ class StartGameInput extends Component {
 
     startGame(event) {
         event.preventDefault()
-
+        this.setState({...this.state, hideStartGame: true})
     }
 
     render () {
