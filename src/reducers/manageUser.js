@@ -70,7 +70,7 @@ export default function manageUsers(state = {
 
       return {
         ...state,
-        shouldCardsBeFlipped: true
+        shouldCardsBeFlipped: action.frontSideUp
       }
 
     default:

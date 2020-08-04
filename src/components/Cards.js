@@ -4,12 +4,13 @@ import FlipCard from './FlipCard'
 class Cards extends Component {
 
     state = {
-        isFlipped: true
+        isFlipped: true,
+        hideStartGame: false
     }
 
-    lookAtCards(event) {
+    startGame(event) {
         event.preventDefault()
-        this.setState({ isFlipped: true})
+        this.setState({ isFlipped: false, hideStartGame: true})
     }
 
     render() {
@@ -21,6 +22,9 @@ class Cards extends Component {
         
         return(
             <div className="big-card-container">
+                <form onSubmit={(event) => this.startGame(event)} className={this.state.hideStartGame === false ? "" : "hidden"}>
+                    <input type="submit" value="Start Game"/>
+                </form>
                 <div className="cards-container">
                     {finalCards[0]}
                     {finalCards[1]}

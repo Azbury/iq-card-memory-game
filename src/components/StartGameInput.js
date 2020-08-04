@@ -32,6 +32,7 @@ class StartGameInput extends Component {
 
     startGame(event) {
         event.preventDefault()
+        this.props.flipCards(false)
         this.setState({...this.state, hideStartGame: true})
     }
 
@@ -40,9 +41,6 @@ class StartGameInput extends Component {
             <div>
                 <form onSubmit={(event) => this.handleSubmitForCards(event)} className={this.state.hideCardsButton === false ? "" : "hidden"}>
                     <input type="submit" value="Look At Cards"/>
-                </form>
-                <form onSubmit={(event) => this.startGame(event)} className={this.state.hideStartGame === false ? "" : "hidden"}>
-                    <input type="submit" value="Start Game"/>
                 </form>
             </div>
         )
