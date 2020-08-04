@@ -20,6 +20,8 @@ class Cards extends Component {
         this.setState({ hideStartGame: true, initialFlip: true})
     }
 
+    //get cards to flip over after getting a wrong answer
+
     render() {
         
         let animals = this.props.currentCards
