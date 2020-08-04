@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import ReactCardFlip from 'react-card-flip';
 import QuestionMark from '../pictures/questionmark.png'
+import SmileyFace from '../pictures/smileyface.png'
 const Animal = require.context('./animals', true)
 
 class FlipCard extends Component {
@@ -29,7 +30,7 @@ class FlipCard extends Component {
           </div>
  
           <div className="back-card">
-            <img id={this.props.id} className="cat-pic" src={Animal(`./${this.props.animal}.png`)} alt={'pic'}></img>
+            <img id={this.props.id} className="cat-pic" src={this.props.animal === "" ? SmileyFace : Animal(`./${this.props.animal}.png`)} alt={'pic'}></img>
           </div>
       </ReactCardFlip>
     )

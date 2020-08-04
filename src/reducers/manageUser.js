@@ -38,12 +38,13 @@ export default function manageUsers(state = {
       let cardsLeftOnField = state.currentCards
       let newIQ = state.users[0]
       if (state.flippedCards.length === 1 && state.flippedCards[0] === action.imageid) {
-        theCards = [...state.flippedCards, action.imageid]
-        toBeRemoved = true
-        cardsLeftOnField = cardsLeftOnField.filter(e => e !== action.imageid)
-        newIQ.iq = state.users[0].iq + 10
-      } else if (state.flippedCards.length === 1 && state.flippedCards[0] !== action.imageid) {
         theCards = []
+        toBeRemoved = true
+        cardsLeftOnField = cardsLeftOnField.map(e => e === action.imageid ? "" : e)
+        newIQ.iq = state.users[0].iq + 10
+      } else if ((state.flippedCards.length === 1 && state.flippedCards[0] !== action.imageid) || (state.flippedCards.length === 2)) {
+        theCards = []
+        newIQ.iq = state.users[0].iq - 10
       } else {
         theCards = [...state.flippedCards, action.imageid]
       }
