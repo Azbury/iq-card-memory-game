@@ -31,7 +31,6 @@ class FlipCard extends Component {
  
           <div className="back-card">
             <img id={this.props.id} className="cat-pic" src={Animal(`./${this.props.animal}.png`)} alt={'pic'}></img>
-          <button onClick={this.handleClick}>Click to flip</button>
           </div>
       </ReactCardFlip>
     )
