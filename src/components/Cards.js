@@ -6,18 +6,12 @@ class Cards extends Component {
     state = {
         isFlipped: true,
         hideFlipCardsBack: false,
-        hideStartGame: true,
         initialFlip: false
     }
 
     flipCardsBack(event) {
         event.preventDefault()
         this.setState({ isFlipped: false, hideFlipCardsBack: true, initialFlip: true, hideStartGame: false})
-    }
-
-    startGame(event) {
-        event.preventDefault()
-        this.setState({ hideStartGame: true, initialFlip: true})
     }
 
     //get cards to flip over after getting a wrong answer
@@ -34,9 +28,6 @@ class Cards extends Component {
         return(
             <div className="big-card-container">
                 <form onSubmit={(event) => this.flipCardsBack(event)} className={this.state.hideFlipCardsBack === false ? "" : "hidden"}>
-                    <input type="submit" value="Flip Cards Back"/>
-                </form>
-                <form onSubmit={(event) => this.startGame(event)} className={this.state.hideStartGame === false ? "" : "hidden"}>
                     <input type="submit" value="Start Game"/>
                 </form>
                 <div className="cards-container">

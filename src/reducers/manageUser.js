@@ -42,7 +42,7 @@ export default function manageUsers(state = {
         toBeRemoved = true
         cardsLeftOnField = cardsLeftOnField.filter(e => e !== action.imageid)
         newIQ.iq = state.users[0].iq + 10
-      } else if (state.flippedCards.length === 2) {
+      } else if (state.flippedCards.length === 1 && state.flippedCards[0] !== action.imageid) {
         theCards = []
       } else {
         theCards = [...state.flippedCards, action.imageid]
