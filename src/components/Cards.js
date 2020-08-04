@@ -5,25 +5,35 @@ class Cards extends Component {
 
     state = {
         isFlipped: true,
-        hideStartGame: false
+        hideFlipCardsBack: false,
+        hideStartGame: true,
+        initialFlip: false
+    }
+
+    flipCardsBack(event) {
+        event.preventDefault()
+        this.setState({ isFlipped: false, hideFlipCardsBack: true, initialFlip: true, hideStartGame: false})
     }
 
     startGame(event) {
         event.preventDefault()
-        this.setState({ isFlipped: false, hideStartGame: true})
+        this.setState({ hideStartGame: true, initialFlip: true})
     }
 
     render() {
         
         let animals = this.props.currentCards
 
-        let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index} isMatch={this.props.isMatch} isFlipped={this.state.isFlipped}/>)
+        let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index} isMatch={this.props.isMatch} isFlipped={this.state.isFlipped} initialFlip={this.state.initialFlip}/>)
         let finalCards = cards
         
         //cards need to be able to flip on their own individual not just being set from the state of this component
 
         return(
             <div className="big-card-container">
+                <form onSubmit={(event) => this.flipCardsBack(event)} className={this.state.hideFlipCardsBack === false ? "" : "hidden"}>
+                    <input type="submit" value="Flip Cards Back"/>
+                </form>
                 <form onSubmit={(event) => this.startGame(event)} className={this.state.hideStartGame === false ? "" : "hidden"}>
                     <input type="submit" value="Start Game"/>
                 </form>

@@ -7,9 +7,8 @@ class FlipCard extends Component {
   //the constructor is only called at the creation of the component so i can not use that to update the state from the props of Cards.js
   constructor(props) {
     super(props);
-    const { isFlipped } = props
       this.state = {
-      isFlipped: isFlipped
+      isFlipped: false
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -23,7 +22,7 @@ class FlipCard extends Component {
 
   render() {
     return (
-      <ReactCardFlip className={this.props.removeCards === "true" ? "hidden" : ""} isFlipped={this.props.isFlipped} flipDirection="vertical">
+      <ReactCardFlip isFlipped={this.props.initialFlip === false ? this.props.isFlipped : this.state.isFlipped} flipDirection="vertical">
           <div>
             <img className="dog-pic" src={QuestionMark} alt={'question mark'}></img>
           <button onClick={this.handleClick}>Click to flip</button>
