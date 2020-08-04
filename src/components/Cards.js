@@ -20,6 +20,8 @@ class Cards extends Component {
         let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index} isMatch={this.props.isMatch} isFlipped={this.state.isFlipped}/>)
         let finalCards = cards
         
+        //cards need to be able to flip on their own individual not just being set from the state of this component
+
         return(
             <div className="big-card-container">
                 <form onSubmit={(event) => this.startGame(event)} className={this.state.hideStartGame === false ? "" : "hidden"}>
