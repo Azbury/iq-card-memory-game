@@ -4,7 +4,9 @@ import React, { Component } from 'react';
 class StartGameInput extends Component {
 
     state={
-        cards:this.shuffle(['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger', 'camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger'])
+        cards:this.shuffle(['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger', 'camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']),
+        hideCardsButton: false,
+        hideStartGame: true
     }
 
     shuffle(array) {
@@ -22,16 +24,25 @@ class StartGameInput extends Component {
         return array;
     }
 
-    handleSubmit(event) {
+    handleSubmitForCards(event) {
         event.preventDefault()
         this.props.addCards(this.state.cards)
+        this.setState({...this.state, hideCardsButton: true, hideStartGame: false})
+    }
+
+    startGame(event) {
+        event.preventDefault()
+
     }
 
     render () {
         return (
             <div>
-                <form onSubmit={(event) => this.handleSubmit(event)}>
+                <form onSubmit={(event) => this.handleSubmitForCards(event)} className={this.state.hideCardsButton === false ? "" : "hidden"}>
                     <input type="submit" value="Look At Cards"/>
+                </form>
+                <form onSubmit={(event) => this.startGame(event)} className={this.state.hideStartGame === false ? "" : "hidden"}>
+                    <input type="submit" value="Start Game"/>
                 </form>
             </div>
         )
