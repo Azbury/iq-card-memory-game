@@ -20,7 +20,7 @@ class Cards extends Component {
         
         let animals = this.props.currentCards
 
-        let cards = animals.map((animal, index) => <FlipCard animal={animal} id={index} isMatch={this.props.isMatch} isFlipped={this.state.isFlipped} initialFlip={this.state.initialFlip}/>)
+        let cards = animals.map((animal, index) => <FlipCard animal={animal.name} id={index} isMatch={this.props.isMatch} isFlipped={animal.flipped} initialFlip={this.state.initialFlip}/>)
         let finalCards = cards
         
         //cards need to be able to flip on their own individual not just being set from the state of this component
