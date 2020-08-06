@@ -72,7 +72,7 @@ export default function manageUsers(state = {
       return {
         ...state,
         shouldCardsBeFlipped: action.frontSideUp,
-        currentCards: state.flippedCardscurrentCards.map(e => {return {name: e.name, flipped: false}})
+        currentCards: state.currentCards.map(e => {return {name: e.name, flipped: false}})
       }
 
     default:
