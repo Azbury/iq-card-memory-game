@@ -40,12 +40,12 @@ export default function manageUsers(state = {
       if (state.flippedCards.length === 1 && state.flippedCards[0] === action.imageid) {
         theCards = []
         toBeRemoved = true
-        cardsLeftOnField = cardsLeftOnField.map(e => e === action.imageid ? "" : e)
+        cardsLeftOnField = cardsLeftOnField.map(e => e.name === action.imageid ? {name: "", flipped: true, id: e.id} : e)
         newIQ.iq = state.users[0].iq + 10
       } else if ((state.flippedCards.length === 1 && state.flippedCards[0] !== action.imageid) || (state.flippedCards.length === 2)) {
         theCards = []
         newIQ.iq = state.users[0].iq - 10
-        cardsLeftOnField = cardsLeftOnField.map(e => e.name === action.imageid ? {name: e.name, flipped: false} : {name: e.name, flipped: e.flipped})
+        cardsLeftOnField = cardsLeftOnField.map(e => e.name === state.flippedCards[0] || e.name === action.imageid ? {name: e.name, flipped: false, id: e.id} : {name: e.name, flipped: e.flipped, id: e.id})
       } else {
         theCards = [...state.flippedCards, action.imageid]
       }
@@ -80,7 +80,7 @@ export default function manageUsers(state = {
       
       return {
         ...state,
-        currentCards: state.currentCards.map(e => e.id === action.animal ? {name: e.name, flipped: !e.flipped} : {name: e.name, flipped: e.flipped})
+        currentCards: state.currentCards.map(e => e.id === action.animal ? {name: e.name, flipped: !e.flipped, id: e.id} : {name: e.name, flipped: e.flipped, id: e.id})
       }
     
     default:
