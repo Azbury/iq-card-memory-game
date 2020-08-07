@@ -14,7 +14,7 @@ class CardsContainer extends Component {
               <SignupInput addUser={this.props.addUser} newUser={this.props.newUserButton} addCards={this.props.addCards}/>
               {this.props.submitted && <User currentUser={this.props.users.find(user => user.id === this.props.currentUser)}/>}
               {this.props.submitted && <StartGameInput addCards={this.props.addCards} flipCards={this.props.flipCards}/>}
-              {this.props.gameStarted && <Cards isMatch={this.props.isMatch} flippedCards={this.props.flippedCards} removeCards={this.props.removeCards} currentCards={this.props.currentCards} flipCards={this.props.flipCards} shouldCardsBeFlipped={this.props.shouldCardsBeFlipped}/>}
+              {this.props.gameStarted && <Cards isMatch={this.props.isMatch} currentCards={this.props.currentCards} flipCards={this.props.flipCards} shouldCardsBeFlipped={this.props.shouldCardsBeFlipped} flipCard={this.props.flipCard}/>}
             </div>
         )
     }
@@ -31,7 +31,8 @@ const mapDispatchToProps = dispatch => ({
   newUserButton: username => dispatch({type: 'NEW_USER_BUTTON', username}),
   isMatch: imageid => dispatch({type: 'IS_MATCH', imageid}),
   addCards: cards => dispatch({type: 'ADD_CARDS', cards}),
-  flipCards: frontSideUp => dispatch({type: 'FLIP_CARDS', frontSideUp})
+  flipCards: frontSideUp => dispatch({type: 'FLIP_CARDS', frontSideUp}),
+  flipCard: animal => dispatch({type: 'FLIP_CARD', animal})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardsContainer)

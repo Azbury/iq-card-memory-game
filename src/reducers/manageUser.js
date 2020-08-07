@@ -45,6 +45,7 @@ export default function manageUsers(state = {
       } else if ((state.flippedCards.length === 1 && state.flippedCards[0] !== action.imageid) || (state.flippedCards.length === 2)) {
         theCards = []
         newIQ.iq = state.users[0].iq - 10
+        cardsLeftOnField = cardsLeftOnField.map(e => e.name === action.imageid ? {name: e.name, flipped: false} : {name: e.name, flipped: e.flipped})
       } else {
         theCards = [...state.flippedCards, action.imageid]
       }
@@ -74,7 +75,14 @@ export default function manageUsers(state = {
         shouldCardsBeFlipped: action.frontSideUp,
         currentCards: state.currentCards.map(e => {return {name: e.name, flipped: false}})
       }
-
+    
+    case 'FLIP_CARD':
+      
+      return {
+        ...state,
+        
+      }
+    
     default:
       return state;
 
