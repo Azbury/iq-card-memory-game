@@ -17,7 +17,7 @@ class FlipCard extends Component {
   handleClick(e) {
     e.preventDefault();
     this.props.isMatch(this.props.animal)
-    this.props.flipCard(this.props.animal)
+    this.props.flipCard(this.props.id)
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped}));
   }
   //next step is to make it so when to cards match they disappear now, just take them out of the state when 2 cards match now
