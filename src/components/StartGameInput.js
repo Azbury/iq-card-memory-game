@@ -30,12 +30,6 @@ class StartGameInput extends Component {
         this.setState({...this.state, hideCardsButton: true, hideStartGame: false})
     }
 
-    startGame(event) {
-        event.preventDefault()
-        this.props.flipCards(false)
-        this.setState({...this.state, hideStartGame: true})
-    }
-
     render () {
         return (
             <div>
