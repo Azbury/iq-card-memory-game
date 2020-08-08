@@ -4,7 +4,6 @@ import FlipCard from './FlipCard'
 class Cards extends Component {
 
     state = {
-        isFlipped: true,
         hideFlipCardsBack: false,
     }
 
@@ -14,54 +13,46 @@ class Cards extends Component {
         this.setState({ isFlipped: false, hideFlipCardsBack: true, initialFlip: true, hideStartGame: false})
     }
 
-    //get cards to flip over after getting a wrong answer
-
     render() {
-        
-        let animals = this.props.currentCards
-
-        let cards = animals.map(animal => <FlipCard animal={animal.name} id={animal.id} isMatch={this.props.isMatch} isFlipped={animal.flipped} flipCard={this.props.flipCard}/>)
-        let finalCards = cards
-        
-        //cards need to be able to flip on their own individual not just being set from the state of this component
+        let cards = this.props.currentCards.map(animal => <FlipCard animal={animal.name} id={animal.id} isMatch={this.props.isMatch} isFlipped={animal.flipped} flipCard={this.props.flipCard}/>)
 
         return(
             <div>
                 <form onSubmit={(event) => this.flipCardsBack(event)} className={this.state.hideFlipCardsBack === false ? "" : "hidden"}>
                     <input type="submit" value="Start Game"/>
                 </form>
-            <div className="big-card-container">
-                <div className="cards-container">
-                    {finalCards[0]}
-                    {finalCards[1]}
-                    {finalCards[2]}
-                    {finalCards[3]}
+                <div className="big-card-container">
+                    <div className="cards-container">
+                        {cards[0]}
+                        {cards[1]}
+                        {cards[2]}
+                        {cards[3]}
+                    </div>
+                    <div className="cards-container">
+                        {cards[4]}
+                        {cards[5]}
+                        {cards[6]}
+                        {cards[7]}
+                    </div>
+                    <div className="cards-container">
+                        {cards[8]}
+                        {cards[9]}
+                        {cards[10]}
+                        {cards[11]}
+                    </div>
+                    <div className="cards-container">
+                        {cards[12]}
+                        {cards[13]}
+                        {cards[14]}
+                        {cards[15]}
+                    </div>
+                    <div className="cards-container">
+                        {cards[16]}
+                        {cards[17]}
+                        {cards[18]}
+                        {cards[19]}
+                    </div>
                 </div>
-                <div className="cards-container">
-                    {finalCards[4]}
-                    {finalCards[5]}
-                    {finalCards[6]}
-                    {finalCards[7]}
-                </div>
-                <div className="cards-container">
-                    {finalCards[8]}
-                    {finalCards[9]}
-                    {finalCards[10]}
-                    {finalCards[11]}
-                </div>
-                <div className="cards-container">
-                    {finalCards[12]}
-                    {finalCards[13]}
-                    {finalCards[14]}
-                    {finalCards[15]}
-                </div>
-                <div className="cards-container">
-                    {finalCards[16]}
-                    {finalCards[17]}
-                    {finalCards[18]}
-                    {finalCards[19]}
-                </div>
-            </div>
             </div>
         )
     }
