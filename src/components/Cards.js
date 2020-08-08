@@ -6,7 +6,6 @@ class Cards extends Component {
     state = {
         isFlipped: true,
         hideFlipCardsBack: false,
-        initialFlip: false
     }
 
     flipCardsBack(event) {
@@ -21,7 +20,7 @@ class Cards extends Component {
         
         let animals = this.props.currentCards
 
-        let cards = animals.map(animal => <FlipCard animal={animal.name} id={animal.id} isMatch={this.props.isMatch} isFlipped={animal.flipped} initialFlip={this.state.initialFlip} flipCard={this.props.flipCard}/>)
+        let cards = animals.map(animal => <FlipCard animal={animal.name} id={animal.id} isMatch={this.props.isMatch} isFlipped={animal.flipped} flipCard={this.props.flipCard}/>)
         let finalCards = cards
         
         //cards need to be able to flip on their own individual not just being set from the state of this component
