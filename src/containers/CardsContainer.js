@@ -11,16 +11,14 @@ class CardsContainer extends Component {
         return (
             <div className='final-container'>
               <h1>IQ Card Memory Game</h1>
-              <SignupInput addUser={this.props.addUser} newUser={this.props.newUserButton} addCards={this.props.addCards}/>
+              <SignupInput addUser={this.props.addUser} newUser={this.props.newUserButton}/>
               {this.props.submitted && <User currentUser={this.props.users.find(user => user.id === this.props.currentUser)}/>}
-              {this.props.submitted && <StartGameInput addCards={this.props.addCards} flipCards={this.props.flipCards}/>}
-              {this.props.gameStarted && <Cards isMatch={this.props.isMatch} currentCards={this.props.currentCards} flipCards={this.props.flipCards} shouldCardsBeFlipped={this.props.shouldCardsBeFlipped} flipCard={this.props.flipCard}/>}
+              {this.props.submitted && <StartGameInput addCards={this.props.addCards}/>}
+              {this.props.gameStarted && <Cards isMatch={this.props.isMatch} currentCards={this.props.currentCards} flipCards={this.props.flipCards} flipCard={this.props.flipCard}/>}
             </div>
         )
     }
 }
-
-//create new container for starting game
 
 const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, users: state.users, flippedCards: state.flippedCards, removeCards: state.removeCards,
                                     gameStarted: state.gameStarted, currentCards: state.currentCards, shouldCardsBeFlipped: state.shouldCardsBeFlipped
