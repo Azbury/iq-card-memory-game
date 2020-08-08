@@ -10,7 +10,7 @@ class Cards extends Component {
     flipCardsBack(event) {
         event.preventDefault()
         this.props.flipCards(this.state.initialFlip)
-        this.setState({ isFlipped: false, hideFlipCardsBack: true, initialFlip: true, hideStartGame: false})
+        this.setState({hideFlipCardsBack: true})
     }
 
     render() {
