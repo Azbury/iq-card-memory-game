@@ -5,7 +5,6 @@ export default function manageUsers(state = {
   currentUser: '',
   submitted: false,
   flippedCards: [],
-  removeCards: false,
   currentCards: [],
   gameStarted: false
 }, action) {
@@ -33,12 +32,10 @@ export default function manageUsers(state = {
     case 'IS_MATCH':
 
       let theCards = []
-      let toBeRemoved = false
       let cardsLeftOnField = state.currentCards
       let newIQ = state.users[0]
       if (state.flippedCards.length === 1 && state.flippedCards[0] === action.imageid) {
         theCards = []
-        toBeRemoved = true
         cardsLeftOnField = cardsLeftOnField.map(e => e.name === action.imageid ? {name: "", flipped: true, id: e.id} : e)
         newIQ.iq = state.users[0].iq + 10
       } else if ((state.flippedCards.length === 1 && state.flippedCards[0] !== action.imageid) || (state.flippedCards.length === 2)) {
@@ -55,7 +52,6 @@ export default function manageUsers(state = {
         currentUser: state.currentUser,
         submitted: state.submitted,
         flippedCards: theCards,
-        removeCards: toBeRemoved,
         currentCards: cardsLeftOnField
       }
 
