@@ -20,9 +20,7 @@ class CardsContainer extends Component {
     }
 }
 
-const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, users: state.users, flippedCards: state.flippedCards, removeCards: state.removeCards,
-                                    gameStarted: state.gameStarted, currentCards: state.currentCards, shouldCardsBeFlipped: state.shouldCardsBeFlipped
-                                  })
+const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, users: state.users, gameStarted: state.gameStarted, currentCards: state.currentCards })
 
 const mapDispatchToProps = dispatch => ({
   addUser: username => dispatch({type: 'ADD_USER', username}),
