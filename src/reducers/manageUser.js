@@ -33,7 +33,7 @@ export default function manageUsers(state = {
 
       let theCards = []
       let cardsLeftOnField = state.currentCards
-      let newIQ = state.users[0]
+      let newIQ = state.users.find(user => user.id === state.currentUser)
       if (state.flippedCards.length === 1 && state.flippedCards[0] === action.imageid) {
         theCards = []
         cardsLeftOnField = cardsLeftOnField.map(e => e.name === action.imageid ? {name: "", flipped: true, id: e.id} : e)
@@ -48,7 +48,7 @@ export default function manageUsers(state = {
 
       return {
         ...state,
-        users: [newIQ],
+        users: [...state.users, newIQ],
         currentUser: state.currentUser,
         submitted: state.submitted,
         flippedCards: theCards,
