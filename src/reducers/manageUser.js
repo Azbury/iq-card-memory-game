@@ -7,8 +7,7 @@ export default function manageUsers(state = {
   flippedCards: [],
   removeCards: false,
   currentCards: [],
-  gameStarted: false,
-  shouldCardsBeFlipped: false
+  gameStarted: false
 }, action) {
   switch (action.type) {
 
@@ -72,7 +71,6 @@ export default function manageUsers(state = {
 
       return {
         ...state,
-        shouldCardsBeFlipped: action.frontSideUp,
         currentCards: state.currentCards.map(e => {return {name: e.name, flipped: false, id: e.id}})
       }
     
