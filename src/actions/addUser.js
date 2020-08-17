@@ -12,7 +12,7 @@ export function addUser() {
         },
         body: JSON.stringify(formData)
       }
-      fetch('http://localhost:3000/users')
+      fetch('http://localhost:3000/users', configObj)
         .then(response => response.json())
         .then(user => dispatch({ type: 'ADD_USER', user }))
     };
