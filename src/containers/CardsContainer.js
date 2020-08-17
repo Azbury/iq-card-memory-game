@@ -13,7 +13,7 @@ class CardsContainer extends Component {
             <div className='final-container'>
               <h1>IQ Card Memory Game</h1>
               <SignupInput addUser={this.props.addUser} newUser={this.props.newUser}/>
-              {this.props.submitted && <User currentUser={this.props.currentUser}/>}
+              {this.props.submitted && <User currentUser={this.props.currentUser} iq={this.props.iq}/>}
               {this.props.submitted && <StartGameInput addCards={this.props.addCards}/>}
               {this.props.gameStarted && <Cards isMatch={this.props.isMatch} currentCards={this.props.currentCards} flipCards={this.props.flipCards} flipCard={this.props.flipCard}/>}
             </div>
@@ -21,7 +21,7 @@ class CardsContainer extends Component {
     }
 }
 
-const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, gameStarted: state.gameStarted, currentCards: state.currentCards })
+const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, gameStarted: state.gameStarted, currentCards: state.currentCards, iq: state.iq })
 
 const mapDispatchToProps = dispatch => ({
   addUser: username => dispatch(addUser(username)),

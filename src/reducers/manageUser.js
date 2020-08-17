@@ -1,5 +1,6 @@
 export default function manageUsers(state = {
   currentUser: '',
+  iq: 100,
   submitted: false,
   flippedCards: [],
   currentCards: [],
