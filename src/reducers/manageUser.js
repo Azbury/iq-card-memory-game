@@ -29,14 +29,14 @@ export default function manageUsers(state = {
 
       let theCards = []
       let cardsLeftOnField = state.currentCards
-      let newIQ = state.users.find(user => user.id === state.currentUser)
+      let newIQ = state.iq
       if (state.flippedCards.length === 1 && state.flippedCards[0] === action.imageid) {
         theCards = []
         cardsLeftOnField = cardsLeftOnField.map(e => e.name === action.imageid ? {name: "", flipped: true, id: e.id} : e)
-        newIQ.iq = state.users[0].iq + 10
+        newIQ = state.iq + 10
       } else if ((state.flippedCards.length === 1 && state.flippedCards[0] !== action.imageid) || (state.flippedCards.length === 2)) {
         theCards = []
-        newIQ.iq = state.users[0].iq - 10
+        newIQ = state.iq - 10
         cardsLeftOnField = cardsLeftOnField.map(e => e.name === state.flippedCards[0] || e.name === action.imageid ? {name: e.name, flipped: false, id: e.id} : {name: e.name, flipped: e.flipped, id: e.id})
       } else {
         theCards = [...state.flippedCards, action.imageid]
@@ -44,9 +44,7 @@ export default function manageUsers(state = {
 
       return {
         ...state,
-        users: [...state.users, newIQ],
-        currentUser: state.currentUser,
-        submitted: state.submitted,
+        iq: newIQ,
         flippedCards: theCards,
         currentCards: cardsLeftOnField
       }
