@@ -4,7 +4,7 @@ class User extends Component {
     render() {
         return (
             <div className="current-user">
-                <h2>Username: {this.props.username}</h2>
+                <h2>Username: {this.props.currentUser.username}</h2>
                 <h2>IQ: {this.props.iq}</h2>
             </div>
         )
