@@ -4,6 +4,7 @@ import SignupInput from '../components/SignupInput'
 import User from '../components/User'
 import { connect } from 'react-redux'
 import StartGameInput from '../components/StartGameInput'
+import { addUser } from '../actions/addUser'
 
 class CardsContainer extends Component {
 
@@ -23,7 +24,7 @@ class CardsContainer extends Component {
 const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: state.submitted, users: state.users, gameStarted: state.gameStarted, currentCards: state.currentCards })
 
 const mapDispatchToProps = dispatch => ({
-  addUser: username => dispatch({type: 'ADD_USER', username}),
+  addUser: username => dispatch(addUser(username)),
   newUser: username => dispatch({type: 'NEW_USER_BUTTON', username}),
   isMatch: imageid => dispatch({type: 'IS_MATCH', imageid}),
   addCards: cards => dispatch({type: 'ADD_CARDS', cards}),

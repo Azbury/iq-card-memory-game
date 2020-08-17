@@ -1,8 +1,8 @@
-export function addUser() {
+export function addUser(username) {
     return (dispatch) => {
       dispatch({ type: 'START_ADDING_USER_REQUEST' })
       let formData = {
-        "username": userData.username.value
+        "username": username
       }
       let configObj = {
         method: "Post",
