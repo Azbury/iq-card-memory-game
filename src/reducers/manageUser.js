@@ -1,7 +1,4 @@
-import {v1 as uuid} from "uuid"; 
-
 export default function manageUsers(state = {
-  users: [],
   currentUser: '',
   submitted: false,
   flippedCards: [],
@@ -12,11 +9,9 @@ export default function manageUsers(state = {
 
     case 'ADD_USER':
 
-      const user = { username: action.username, iq: 100, id: uuid() };
       return {
         ...state,
-        users: [ ...state.users, user],
-        currentUser: user.id,
+        currentUser: action.user,
         submitted: true
       }
     
