@@ -20,9 +20,10 @@ export default function manageUsers(state = {
 
       return {
         ...state,
-        users: [...state.users],
         currentUser: '',
-        submitted: false
+        currentCards: [],
+        submitted: false,
+        gameStarted: false
       }
     
     case 'IS_MATCH':
