@@ -2,6 +2,8 @@ export default function manageUsers(state = {
   currentUser: '',
   iq: 100,
   submitted: false,
+  showUser: false,
+  submitScore: false,
   flippedCards: [],
   currentCards: [],
   gameStarted: false
@@ -13,7 +15,8 @@ export default function manageUsers(state = {
       return {
         ...state,
         currentUser: action.user,
-        submitted: true
+        submitted: true,
+        showUser: true
       }
     
     case 'NEW_USER_BUTTON':
@@ -31,6 +34,7 @@ export default function manageUsers(state = {
       let theCards = []
       let cardsLeftOnField = state.currentCards
       let newIQ = state.iq
+      let updateSubmit = state.submitted
       if (state.flippedCards.length === 1 && state.flippedCards[0] === action.imageid) {
         theCards = []
         cardsLeftOnField = cardsLeftOnField.map(e => e.name === action.imageid ? {name: "", flipped: true, id: e.id} : e)
@@ -46,6 +50,7 @@ export default function manageUsers(state = {
       return {
         ...state,
         iq: newIQ,
+        submitted: updateSubmit,
         flippedCards: theCards,
         currentCards: cardsLeftOnField
       }
@@ -55,6 +60,7 @@ export default function manageUsers(state = {
       return {
         ...state,
         currentCards: action.cards,
+        submitted: false,
         gameStarted: true
       }
 
@@ -62,7 +68,8 @@ export default function manageUsers(state = {
 
       return {
         ...state,
-        currentCards: state.currentCards.map(e => {return {name: e.name, flipped: false, id: e.id}})
+        currentCards: state.currentCards.map(e => {return {name: e.name, flipped: false, id: e.id}}),
+        submitScore: true
       }
     
     case 'FLIP_CARD':
