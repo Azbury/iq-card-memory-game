@@ -33,7 +33,7 @@ class SignupInput extends Component {
   render() {
     return (
       <div>
-        <form className={this.state.newUserButton === "active" ? "hidden" : ""} onSubmit={(event) => this.handleOnSubmit(event)}>
+        <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <p>Please enter your username</p>
           <input
             type="text"
