@@ -6,7 +6,7 @@ import {
   Route
 } from 'react-router-dom'
 import NavBar from './components/NavBar';
-import SignupInput from './components/SignupInput';
+import UserContainer from './containers/UserContainer';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <div className="App">
         <NavBar />
         <Route exact path="/game" component={CardsContainer} />
-        <Route exact path="/create-user" component={SignupInput} />
+        <Route exact path="/user" component={UserContainer} />
       </div>
     </Router>
   )
