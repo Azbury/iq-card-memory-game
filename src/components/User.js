@@ -5,7 +5,6 @@ class User extends Component {
         return (
             <div className="current-user">
                 <h2>Username: {this.props.currentUser.username}</h2>
-                <h2>IQ: {this.props.iq}</h2>
             </div>
         )
     }

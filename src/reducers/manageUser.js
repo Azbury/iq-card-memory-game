@@ -1,7 +1,7 @@
 export default function manageUsers(state = {
   currentUser: '',
   iq: 100,
-  submitted: false,
+  userSubmitted: false,
   showUser: false,
   submitScore: false,
   flippedCards: [],
@@ -15,7 +15,7 @@ export default function manageUsers(state = {
       return {
         ...state,
         currentUser: action.user,
-        submitted: true,
+        userSubmitted: true,
         showUser: true
       }
     
@@ -25,7 +25,7 @@ export default function manageUsers(state = {
         ...state,
         currentUser: '',
         currentCards: [],
-        submitted: false,
+        userSubmitted: false,
         gameStarted: false
       }
     
