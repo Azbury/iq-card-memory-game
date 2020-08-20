@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import CardsContainer from './containers/CardsContainer'
+import GameContainer from './containers/GameContainer'
 import {
   BrowserRouter as Router,
   Route
@@ -13,7 +13,7 @@ function App() {
     <Router>
       <div className="App">
         <NavBar />
-        <Route exact path="/game" component={CardsContainer} />
+        <Route exact path="/game" component={GameContainer} />
         <Route exact path="/user" component={UserContainer} />
       </div>
     </Router>
