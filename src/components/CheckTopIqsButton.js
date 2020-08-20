@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { checkTopIqs } from '../actions/checkTopIqs'
 
 class CheckTopIqsButton extends Component {
 

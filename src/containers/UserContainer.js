@@ -14,7 +14,7 @@ class UserContainer extends Component {
                 {!this.props.userSubmitted && <SignupInput addUser={this.props.addUser}/>}
                 {this.props.userSubmitted && <NewUserButton newUser={this.props.newUser}/>}
                 {this.props.userSubmitted && <User currentUser={this.props.currentUser}/>}
-                {this.props.userSubmitted && <CheckTopIqsButton checkTopIqs={this.props.checkTopIqs}/>}
+                {this.props.userSubmitted && <CheckTopIqsButton checkTopIqs={this.props.checkTopIqs} userId={this.props.currentUser.id}/>}
             </div>
         )
     }
