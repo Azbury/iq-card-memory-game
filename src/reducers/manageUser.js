@@ -1,5 +1,6 @@
 export default function manageUsers(state = {
   currentUser: '',
+  userTopIqs: [],
   iq: 100,
   userSubmitted: false,
   showUser: false,
@@ -79,6 +80,13 @@ export default function manageUsers(state = {
         currentCards: state.currentCards.map(e => e.id === action.animal ? {name: e.name, flipped: !e.flipped, id: e.id} : {name: e.name, flipped: e.flipped, id: e.id})
       }
     
+    case 'CHECK_TOP_IQS':
+
+      return {
+        ...state,
+        userTopIqs: action.iqs
+      }
+
     default:
       return state;
 
