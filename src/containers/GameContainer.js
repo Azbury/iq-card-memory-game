@@ -26,7 +26,7 @@ const mapStateToProps = state => ({ currentUser: state.currentUser, submitted: s
 
 const mapDispatchToProps = dispatch => ({
     addUser: username => dispatch(addUser(username)),
-    addIq: iq => dispatch(addIq(iq)),
+    addIq: (iq, user_id)=> dispatch(addIq(iq, user_id)),
     newUser: username => dispatch({type: 'NEW_USER_BUTTON', username}),
     isMatch: imageid => dispatch({type: 'IS_MATCH', imageid}),
     addCards: cards => dispatch({type: 'ADD_CARDS', cards}),

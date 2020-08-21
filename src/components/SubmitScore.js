@@ -9,7 +9,6 @@ class SubmitScore extends Component {
     handleSubmit(event) {
         event.preventDefault()
         //if (this.props.currentCards.every(e => e.flipped === true)) {
-            console.log(this.props.currentUser)
             this.props.addIq(this.props.iq, this.props.currentUser)
             //this.setState({
                 //gameDone: false
