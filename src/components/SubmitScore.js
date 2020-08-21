@@ -8,16 +8,17 @@ class SubmitScore extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
-        if (this.props.currentCards.every(e => e.flipped === true)) {
-            this.props.addIq(this.props.iq, this.props.currentUser.id)
-            this.setState({
-                gameDone: false
-            })
-        } else {
-            this.setState({
-                gameDone: true
-            })
-        }
+        //if (this.props.currentCards.every(e => e.flipped === true)) {
+            console.log(this.props.currentUser)
+            this.props.addIq(this.props.iq, this.props.currentUser)
+            //this.setState({
+                //gameDone: false
+            //})
+        //} else {
+            //this.setState({
+                //gameDone: true
+            //})
+        //}
     }
 
     render () {

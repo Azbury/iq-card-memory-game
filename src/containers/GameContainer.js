@@ -13,7 +13,7 @@ class GameContainer extends Component {
         return (
             <div className="game-container">
                 <StartGameInput addCards={this.props.addCards}/>
-                <SubmitScore addIq={this.props.addIq} currentCards={this.props.currentCards} iq={this.props.iq} currentUser={this.props.currentUser}/>
+                <SubmitScore addIq={this.props.addIq} currentCards={this.props.currentCards} iq={this.props.iq} currentUser={this.props.currentUser.id}/>
                 {this.props.gameStarted && <Cards isMatch={this.props.isMatch} currentCards={this.props.currentCards} flipCards={this.props.flipCards} flipCard={this.props.flipCard}/>}
             </div>
         )

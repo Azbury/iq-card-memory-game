@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {v1 as uuid} from "uuid";
+import React, { Component } from 'react'
+import {v1 as uuid} from "uuid"
 
 class StartGameInput extends Component {
 
