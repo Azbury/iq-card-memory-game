@@ -27,7 +27,7 @@ const mapStateToProps = state => ({ currentUser: state.currentUser, userSubmitte
 const mapDispatchToProps = dispatch => ({
     addUser: username => dispatch(addUser(username)),
     newUser: username => dispatch({type: 'NEW_USER_BUTTON', username}),
-    checkTopIqs: iqs => dispatch(checkTopIqs(iqs))
+    checkTopIqs: userId => dispatch(checkTopIqs(userId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer)

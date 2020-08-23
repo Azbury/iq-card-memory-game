@@ -84,7 +84,7 @@ export default function manageUsers(state = {
 
       return {
         ...state,
-        userTopIqs: action.iqs
+        userTopIqs: action.newIqs
       }
 
     default:
