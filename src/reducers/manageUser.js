@@ -6,7 +6,8 @@ export default function manageUsers(state = {
   submitScore: false,
   flippedCards: [],
   currentCards: [],
-  gameStarted: false
+  gameStarted: false,
+  clickedCreateUser: false
 }, action) {
   switch (action.type) {
 
@@ -84,6 +85,13 @@ export default function manageUsers(state = {
       return {
         ...state,
         userTopIqs: action.user.iqs
+      }
+
+    case 'CLICK_CREATE_USER_BUTTON':
+
+      return {
+        ...state,
+        clickedCreateUser: true
       }
 
     default:
