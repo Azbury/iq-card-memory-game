@@ -13,16 +13,14 @@ class UserContainer extends Component {
             <div className="user-container">
                 {!this.props.userSubmitted && <SignupInput addUser={this.props.addUser}/>}
                 {this.props.userSubmitted && <NewUserButton newUser={this.props.newUser}/>}
-                {this.props.userSubmitted && <User currentUser={this.props.currentUser}/>}
+                {this.props.userSubmitted && <User currentUser={this.props.currentUser} iqs={this.props.iqs}/>}
                 {this.props.userSubmitted && <CheckTopIqsButton checkTopIqs={this.props.checkTopIqs} userId={this.props.currentUser.id}/>}
             </div>
         )
     }
 }
 
-const mapStateToProps = state => ({ currentUser: state.currentUser, userSubmitted: state.userSubmitted, gameStarted: state.gameStarted, currentCards: state.currentCards, iq: state.iq, 
-                                    showUser: state.showUser, submitNewScore: state.submitScore
-})
+const mapStateToProps = state => ({ currentUser: state.currentUser, userSubmitted: state.userSubmitted, currentCards: state.currentCards, iqs: state.userTopIqs})
 
 const mapDispatchToProps = dispatch => ({
     addUser: username => dispatch(addUser(username)),

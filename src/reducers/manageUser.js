@@ -1,6 +1,6 @@
 export default function manageUsers(state = {
   currentUser: '',
-  userTopIqs: '',
+  userTopIqs: [],
   iq: 100,
   userSubmitted: false,
   showUser: false,
