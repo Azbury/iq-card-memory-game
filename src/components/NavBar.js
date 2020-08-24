@@ -2,10 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
+
     return (
         <div className="navbar">
-            <NavLink to="/user">Create User</NavLink>
-            <NavLink to="/game">Game</NavLink>
+            <button className="create-user-button"><NavLink className="link-to-user" to="/user">Create User</NavLink></button>
         </div>
     )
 }

@@ -12,6 +12,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <div className="title">IQ Card Memory Game</div>
         <NavBar />
         <Route exact path="/game" component={GameContainer} />
         <Route exact path="/user" component={UserContainer} />

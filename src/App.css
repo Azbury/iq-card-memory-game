@@ -76,5 +76,27 @@
   width: 200px;
 }
 
+.create-user-button {
+  background-color: white; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
+.link-to-user {
+  color: #A0522D
+}
+
+.title {
+  font-size: 100px;
+  margin-top: 250px;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
 
 

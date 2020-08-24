@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import Cards from '../components/Cards'
-import SignupInput from '../components/SignupInput'
-import User from '../components/User'
 import { connect } from 'react-redux'
 import StartGameInput from '../components/StartGameInput'
 import { addUser } from '../actions/addUser'
