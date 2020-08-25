@@ -26,11 +26,10 @@ class LeaderboardContainer extends Component {
         fetch('http://localhost:3000/users')
           .then(response => response.json())
           .then(users => {
-              console.log(users)
               this.setState({
-              users: users
-            })
-        })
+                users: users
+                })
+          })
     }
 }
 
