@@ -88,17 +88,21 @@
   border-radius: 12px;
 }
 
-.link-to-user {
+.link {
   color: #A0522D
 }
 
 .title {
   font-size: 100px;
-  margin-top: 250px;
+  margin-top: 200px;
   font-family: "Arial Black", Gadget, sans-serif;
 }
 
 .user-form {
+  font-size: 25px;
+}
+
+.username {
   font-size: 25px;
 }
 

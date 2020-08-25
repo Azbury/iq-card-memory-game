@@ -11,7 +11,7 @@ class CreateUserButton extends Component {
     render () {
         return (
             <div className="navbar">
-                <button onClick={(event) => this.handleClick(event)} className="button"><NavLink className="link-to-user" to="/user">Create User</NavLink></button>
+                <button onClick={(event) => this.handleClick(event)} className="button"><NavLink className="link" to="/user">Create User</NavLink></button>
             </div>
         )
     }
