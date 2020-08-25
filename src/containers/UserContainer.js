@@ -13,8 +13,7 @@ class UserContainer extends Component {
             <div className="user-container">
                 {!this.props.userSubmitted && <SignupInput addUser={this.props.addUser}/>}
                 {this.props.userSubmitted && <NewUserButton newUser={this.props.newUser}/>}
-                {this.props.userSubmitted && <User currentUser={this.props.currentUser} iqs={this.props.iqs}/>}
-                {this.props.userSubmitted && <CheckTopIqsButton checkTopIqs={this.props.checkTopIqs} userId={this.props.currentUser.id}/>}
+                {this.props.userSubmitted && <User currentUser={this.props.currentUser} iqs={this.props.iqs} checkTopIqs={this.props.checkTopIqs}/>}
             </div>
         )
     }

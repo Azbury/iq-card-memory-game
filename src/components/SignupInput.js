@@ -34,7 +34,7 @@ class SignupInput extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
-          <p className="user-form">PLEASE ENTER YOUR USERNAME</p>
+          <p className="user-form">Please Enter Your Username</p>
           <input
             type="text"
             value={this.state.username}
