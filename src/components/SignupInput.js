@@ -34,12 +34,14 @@ class SignupInput extends Component {
     return (
       <div>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
-          <p>Please enter your username</p>
+          <p>PLEASE ENTER YOUR USERNAME</p>
           <input
             type="text"
             value={this.state.username}
             onChange={(event) => this.handleOnChange(event)} />
-          <input type="submit" />
+          <br></br>
+          <br></br>
+          <input className="button" type="submit" />
         </form>
         <button className={this.state.newUserButton === "active" ? "" : "hidden"} onClick={(event) => this.handleClick(event)}>New User</button>
       </div>
