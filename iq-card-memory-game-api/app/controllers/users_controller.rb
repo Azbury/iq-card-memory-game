@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+    def index
+        users = User.all
+        render json: users, include: [:iqs]
+    end
+
     def create
         render json: User.create(username: params[:username]), status: :created
     end

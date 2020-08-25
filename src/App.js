@@ -8,6 +8,7 @@ import {
 import CreateUserButton from './components/CreateUserButton';
 import UserContainer from './containers/UserContainer';
 import { connect } from 'react-redux'
+import LeaderboardContainer from './containers/LeaderboardContainer'
 
 class App extends Component {
   render () {
@@ -16,8 +17,9 @@ class App extends Component {
         <div className="App">
           <div className="title">IQ Card Memory Game</div>
           {!this.props.clickedCreateUser && <CreateUserButton clickCreateUserButton={this.props.clickCreateUserButton}/>}
-          <Route exact path="/game" component={GameContainer} />
-          <Route exact path="/user" component={UserContainer} />
+          <Route exact path="/game" component={GameContainer}/>
+          <Route exact path="/user" component={UserContainer}/>
+          <Route exact path="/leaderboard" component={LeaderboardContainer}/>
         </div>
       </Router>
     )
