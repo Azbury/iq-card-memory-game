@@ -6,6 +6,7 @@ import NewUserButton from '../components/NewUserButton'
 import User from '../components/User'
 import { checkTopIqs } from '../actions/checkTopIqs'
 import NewGameButton from '../components/NewGameButton'
+import ViewLeaderboardButton from '../components/ViewLeaderboardButton'
 
 class UserContainer extends Component {
     render () {
@@ -16,6 +17,9 @@ class UserContainer extends Component {
                 <br></br>
                 {this.props.userSubmitted && <User currentUser={this.props.currentUser} iqs={this.props.iqs} checkTopIqs={this.props.checkTopIqs}/>}
                 {this.props.userSubmitted && <NewUserButton newUser={this.props.newUser}/>}
+                <br></br>
+                <br></br>
+                {this.props.userSubmitted && <ViewLeaderboardButton/>}
             </div>
         )
     }
