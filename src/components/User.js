@@ -6,7 +6,7 @@ class User extends Component {
 
         return (
             <div className="current-user">
-                <h2>Username: {this.props.currentUser.username}</h2>
+                <h2>{this.props.currentUser.username}</h2>
                 <h2>Top IQ Scores</h2>
                 {iqList}
             </div>

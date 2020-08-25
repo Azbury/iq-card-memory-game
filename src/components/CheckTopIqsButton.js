@@ -10,7 +10,7 @@ class CheckTopIqsButton extends Component {
 
     render () {
         return (
-            <button onClick={(event) => this.handleClick(event)}>Check Top Iqs</button>
+            <button className="button" onClick={(event) => this.handleClick(event)}>Check Top Iqs</button>
         )
     }
 }

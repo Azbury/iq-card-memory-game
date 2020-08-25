@@ -10,7 +10,7 @@ class NewUserButton extends Component {
 
     render () {
         return (
-            <button onClick={(event) => this.handleClick(event)}>New User</button>
+            <button className="button" onClick={(event) => this.handleClick(event)}>New User</button>
         )
     }
 }
