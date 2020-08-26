@@ -17,6 +17,7 @@ class LeaderboardContainer extends Component {
     render () {
         return (
             <div className="leaderboard-container">
+                <div className="leaderboard-title">Top 20 Leaderboard</div>
                 {this.state.users.map(user => <div>{user.username}{user.iqs.map(iq => iq.iq)}</div>)}
             </div>
         )
