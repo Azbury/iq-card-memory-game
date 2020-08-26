@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class User extends Component {
     render() {
-        let iqList = this.props.iqs.map(iq => <h2>{iq.iq}</h2>).sort()
+        let iqList = this.props.iqs.map(iq => <h2>{iq.iq}</h2>).sort(function(a, b){return b-a})
 
         return (
             <div className="current-user">
