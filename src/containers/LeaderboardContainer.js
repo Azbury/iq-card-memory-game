@@ -15,8 +15,8 @@ class LeaderboardContainer extends Component {
     }
 
     compare(a, b) {
-        const topIqA = a.iqs.sort(function(a, b){return b-a})[0]
-        const topIqB = b.iqs.sort(function(a, b){return b-a})[0]
+        const topIqA = a.iqs.map(iq => iq.iq).sort(function(a, b){return b-a})[0]
+        const topIqB = b.iqs.map(iq => iq.iq).sort(function(a, b){return b-a})[0]
       
         let comparison = 0;
         if (topIqA > topIqB) {
@@ -28,10 +28,9 @@ class LeaderboardContainer extends Component {
     }
 
     render () {
-        let sortedUsers = this.state.users.sort(this.compare)
-        let userArray = sortedUsers.map(user => 
+        let userArray = this.state.users.sort(this.compare).map(user => 
                         <div><div className="leaderboard-user"><div className="leaderboard-username">{user.username}</div><br></br>Top IQ Score<div>{user.iqs.map(iq => iq.iq).sort(function(a, b){return b-a})[0]}</div></div><br></br></div>
-                                            ).sort()
+                                            )
 
         return (
             <div className="leaderboard-container">
