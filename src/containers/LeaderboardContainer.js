@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
-import SignupInput from '../components/SignupInput'
 import { connect } from 'react-redux'
 import { addUser } from '../actions/addUser'
-import NewUserButton from '../components/NewUserButton'
-import User from '../components/User'
 import { checkTopIqs } from '../actions/checkTopIqs'
-import NewGameButton from '../components/NewGameButton'
-import ViewLeaderboardButton from '../components/ViewLeaderboardButton'
+import ProfilePageButton from '../components/ProfilePageButton'
 
 class LeaderboardContainer extends Component {
 
@@ -34,7 +30,9 @@ class LeaderboardContainer extends Component {
 
         return (
             <div className="leaderboard-container">
+                <ProfilePageButton/>
                 <div className="leaderboard-title">Leaderboard</div>
+                <br></br>
                 <div className="leaderboard-user-container">{userArray}</div>
             </div>
         )
