@@ -16,12 +16,12 @@ class FlipCard extends Component {
     return (
       <ReactCardFlip isFlipped={this.props.isFlipped} flipDirection="vertical">
           <div>
-            <img className="dog-pic" src={QuestionMark} alt={'question mark'}></img>
+            <img className="card" src={QuestionMark} alt={'question mark'}></img>
           <button onClick={(event) => this.handleClick(event)}>Click to flip</button>
           </div>
  
           <div className="back-card">
-            <img id={this.props.id} className="cat-pic" src={this.props.animal === "" ? SmileyFace : Animal(`./${this.props.animal}.png`)} alt={'pic'}></img>
+            <img id={this.props.id} className="card" src={this.props.animal === "" ? SmileyFace : Animal(`./${this.props.animal}.png`)} alt={'pic'}></img>
           </div>
       </ReactCardFlip>
     )
