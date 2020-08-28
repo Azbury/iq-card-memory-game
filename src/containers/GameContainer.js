@@ -5,12 +5,15 @@ import StartGameInput from '../components/StartGameInput'
 import { addUser } from '../actions/addUser'
 import SubmitScore from '../components/SubmitScore'
 import { addIq } from '../actions/addIq'
+import ProfilePageButton from '../components/ProfilePageButton'
 
 class GameContainer extends Component {
     render () {
         return (
             <div className="game-container">
                 <div className="game-page-title">IQ Card Memory Game</div>
+                <ProfilePageButton/>
+                <br></br>
                 {!this.props.gameStarted && <StartGameInput addCards={this.props.addCards}/>}
                 {this.props.submitNewScore && <SubmitScore addIq={this.props.addIq} currentCards={this.props.currentCards} iq={this.props.iq} currentUser={this.props.currentUser.id}/>}
                 {this.props.gameStarted && <Cards isMatch={this.props.isMatch} currentCards={this.props.currentCards} flipCards={this.props.flipCards} flipCard={this.props.flipCard}/>}
