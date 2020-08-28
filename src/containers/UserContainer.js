@@ -14,7 +14,7 @@ class UserContainer extends Component {
             <div className="user-container">
                 <div className="title">IQ Card Memory Game</div>
                 {!this.props.userSubmitted && <SignupInput addUser={this.props.addUser}/>}
-                {this.props.userSubmitted && <NewGameButton/>}
+                {this.props.userSubmitted && <NewGameButton addCards={this.props.addCards}/>}
                 <br></br>
                 {this.props.userSubmitted && <User currentUser={this.props.currentUser} iqs={this.props.iqs} checkTopIqs={this.props.checkTopIqs}/>}
                 {this.props.userSubmitted && <NewUserButton newUser={this.props.newUser}/>}
@@ -31,7 +31,8 @@ const mapStateToProps = state => ({ currentUser: state.currentUser, userSubmitte
 const mapDispatchToProps = dispatch => ({
     addUser: username => dispatch(addUser(username)),
     newUser: username => dispatch({type: 'NEW_USER_BUTTON', username}),
-    checkTopIqs: userId => dispatch(checkTopIqs(userId))
+    checkTopIqs: userId => dispatch(checkTopIqs(userId)),
+    addCards: cards => dispatch({type: 'ADD_CARDS', cards})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserContainer)

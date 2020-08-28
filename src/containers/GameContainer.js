@@ -12,7 +12,7 @@ class GameContainer extends Component {
         return (
             <div className="game-container">
                 <div className="game-page-title">IQ Card Memory Game</div>
-                <ProfilePageButton/>
+                <ProfilePageButton stopGame={this.props.stopGame}/>
                 <br></br>
                 {!this.props.gameStarted && <StartGameInput addCards={this.props.addCards}/>}
                 {this.props.submitNewScore && <SubmitScore addIq={this.props.addIq} currentCards={this.props.currentCards} iq={this.props.iq} currentUser={this.props.currentUser.id}/>}
@@ -33,7 +33,8 @@ const mapDispatchToProps = dispatch => ({
     isMatch: imageid => dispatch({type: 'IS_MATCH', imageid}),
     addCards: cards => dispatch({type: 'ADD_CARDS', cards}),
     flipCards: frontSideUp => dispatch({type: 'FLIP_CARDS', frontSideUp}),
-    flipCard: animal => dispatch({type: 'FLIP_CARD', animal})
+    flipCard: animal => dispatch({type: 'FLIP_CARD', animal}),
+    stopGame: () => dispatch({type: 'STOP_GAME'})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameContainer)

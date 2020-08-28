@@ -93,6 +93,13 @@ export default function manageUsers(state = {
         ...state,
         clickedCreateUser: true
       }
+    
+    case 'STOP_GAME':
+
+      return {
+        ...state,
+        submitScore: false
+      }
 
     default:
       return state;

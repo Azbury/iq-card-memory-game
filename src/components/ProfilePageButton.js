@@ -5,6 +5,7 @@ class ProfilePageButton extends Component {
 
     handleClick(event) {
         event.preventDefault()
+        this.props.stopGame()
     }
 
     render () {

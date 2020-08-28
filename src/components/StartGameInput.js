@@ -24,7 +24,6 @@ class StartGameInput extends Component {
 
     handleSubmitForCards(event) {
         event.preventDefault()
-        this.props.addCards(this.state.cards)
     }
 
     render () {
