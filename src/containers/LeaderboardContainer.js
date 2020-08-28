@@ -27,6 +27,7 @@ class LeaderboardContainer extends Component {
 
         return (
             <div className="leaderboard-container">
+                <div className="title">IQ Card Memory Game</div>
                 <ProfilePageButton/>
                 <div className="leaderboard-title">Leaderboard</div>
                 <br></br>

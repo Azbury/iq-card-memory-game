@@ -10,6 +10,7 @@ class GameContainer extends Component {
     render () {
         return (
             <div className="game-container">
+                <div className="game-page-title">IQ Card Memory Game</div>
                 {!this.props.gameStarted && <StartGameInput addCards={this.props.addCards}/>}
                 {this.props.gameStarted && <SubmitScore addIq={this.props.addIq} currentCards={this.props.currentCards} iq={this.props.iq} currentUser={this.props.currentUser.id}/>}
                 <br></br>

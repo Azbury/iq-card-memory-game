@@ -12,6 +12,7 @@ class UserContainer extends Component {
     render () {
         return (
             <div className="user-container">
+                <div className="title">IQ Card Memory Game</div>
                 {!this.props.userSubmitted && <SignupInput addUser={this.props.addUser}/>}
                 {this.props.userSubmitted && <NewGameButton/>}
                 <br></br>

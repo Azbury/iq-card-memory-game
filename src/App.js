@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className="title">IQ Card Memory Game</div>
+          {!this.props.clickedCreateUser && <div className="title">IQ Card Memory Game</div>}
           {!this.props.clickedCreateUser && <CreateUserButton clickCreateUserButton={this.props.clickCreateUserButton}/>}
           <Route exact path="/game" component={GameContainer}/>
           <Route exact path="/user" component={UserContainer}/>
