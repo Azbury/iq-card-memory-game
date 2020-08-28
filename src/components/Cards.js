@@ -19,7 +19,7 @@ class Cards extends Component {
         return(
             <div>
                 <form onSubmit={(event) => this.flipCardsBack(event)} className={this.state.hideFlipCardsBack === false ? "" : "hidden"}>
-                    <input type="submit" value="Start Game"/>
+                    <input className="button" type="submit" value="Start Game"/>
                 </form>
                 <div className="big-card-container">
                     <div className="cards-container">

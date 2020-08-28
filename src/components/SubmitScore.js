@@ -25,7 +25,7 @@ class SubmitScore extends Component {
             <div>
                 <h1 className={this.state.gameDone === false ? "hidden" : ""}>You are not done the game yet!</h1>
                 <form onSubmit={(event) => this.handleSubmit(event)}>
-                    <input type="submit" value="Submit IQ Score"/>
+                    <input className="button" type="submit" value="Submit IQ Score"/>
                 </form>
             </div>
         )

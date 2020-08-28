@@ -10,8 +10,9 @@ class GameContainer extends Component {
     render () {
         return (
             <div className="game-container">
-                <StartGameInput addCards={this.props.addCards}/>
-                <SubmitScore addIq={this.props.addIq} currentCards={this.props.currentCards} iq={this.props.iq} currentUser={this.props.currentUser.id}/>
+                {!this.props.gameStarted && <StartGameInput addCards={this.props.addCards}/>}
+                {this.props.gameStarted && <SubmitScore addIq={this.props.addIq} currentCards={this.props.currentCards} iq={this.props.iq} currentUser={this.props.currentUser.id}/>}
+                <br></br>
                 {this.props.gameStarted && <Cards isMatch={this.props.isMatch} currentCards={this.props.currentCards} flipCards={this.props.flipCards} flipCard={this.props.flipCard}/>}
             </div>
         )
