@@ -82,6 +82,18 @@
   border-radius: 12px;
 }
 
+.small-button {
+  background-color: white;
+  border: none;
+  color: #A0522D;
+  padding: 0px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 12px;
+}
+
 .link {
   color: #A0522D
 }

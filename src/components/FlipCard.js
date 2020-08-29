@@ -17,7 +17,7 @@ class FlipCard extends Component {
       <ReactCardFlip isFlipped={this.props.isFlipped} flipDirection="vertical">
           <div>
             <img className="card" src={QuestionMark} alt={'question mark'}></img>
-          <button onClick={(event) => this.handleClick(event)}>Click to flip</button>
+          <button className="small-button" onClick={(event) => this.handleClick(event)}>Click to Flip</button>
           </div>
  
           <div className="back-card">
