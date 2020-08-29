@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ProfilePageButton from '../components/ProfilePageButton'
+import { connect } from 'react-redux'
 
 class LeaderboardContainer extends Component {
 
@@ -28,7 +29,7 @@ class LeaderboardContainer extends Component {
         return (
             <div className="leaderboard-container">
                 <div className="title">IQ Card Memory Game</div>
-                <ProfilePageButton/>
+                <ProfilePageButton stopGame={this.props.stopGame}/>
                 <div className="leaderboard-title">Leaderboard</div>
                 <br></br>
                 <div className="leaderboard-user-container">{userArray}</div>
@@ -47,4 +48,10 @@ class LeaderboardContainer extends Component {
     }
 }
 
-export default LeaderboardContainer
+const mapStateToProps = state => ({ currentUser: state.currentUser, userSubmitted: state.userSubmitted, currentCards: state.currentCards, iqs: state.userTopIqs})
+
+const mapDispatchToProps = dispatch => ({
+    stopGame: () => dispatch({type: 'STOP_GAME'})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(LeaderboardContainer)

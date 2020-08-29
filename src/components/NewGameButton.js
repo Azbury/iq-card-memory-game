@@ -5,7 +5,7 @@ import {v1 as uuid} from "uuid"
 class NewGameButton extends Component {
 
     state = {
-        cards:this.shuffle(['camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger', 'camel', 'cat', 'dog', 'giraffe', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']).map(e => { return {name: e, flipped: true, id: uuid()}}),
+        cards:this.shuffle(['camel', 'cat', 'dog', 'elephant', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger', 'camel', 'cat', 'dog', 'elephant', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']).map(e => { return {name: e, flipped: true, id: uuid()}}),
     }
 
     shuffle(array) {
