@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import FlipCard from '../components/FlipCard'
 
-//Cards
+//CardsContainer
+//Container to hold all the FlipCards. Has button to start game that flips cards on their backs.
 class CardsContainer extends Component {
 
     state = {
@@ -10,7 +11,7 @@ class CardsContainer extends Component {
 
     flipCardsBack(event) {
         event.preventDefault()
-        this.props.flipCards(this.state.initialFlip)
+        this.props.flipCards()
         this.setState({hideFlipCardsBack: true})
     }
 

@@ -30,7 +30,7 @@ const mapDispatchToProps = dispatch => ({
     newUser: username => dispatch({type: 'NEW_USER_BUTTON', username}),
     isMatch: imageid => dispatch({type: 'IS_MATCH', imageid}),
     addCards: cards => dispatch({type: 'ADD_CARDS', cards}),
-    flipCards: frontSideUp => dispatch({type: 'FLIP_CARDS', frontSideUp}),
+    flipCards: () => dispatch({type: 'FLIP_CARDS'}),
     flipCard: animal => dispatch({type: 'FLIP_CARD', animal}),
     stopGame: () => dispatch({type: 'STOP_GAME'})
 })
