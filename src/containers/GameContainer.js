@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Cards from '../components/Cards'
 import { connect } from 'react-redux'
-import StartGameInput from '../components/StartGameInput'
 import { addUser } from '../actions/addUser'
 import SubmitScore from '../components/SubmitScore'
 import { addIq } from '../actions/addIq'
@@ -13,8 +12,7 @@ class GameContainer extends Component {
             <div className="game-container">
                 <div className="game-page-title">IQ Card Memory Game</div>
                 <ProfilePageButton stopGame={this.props.stopGame}/>
-                <br></br>
-                {!this.props.gameStarted && <StartGameInput addCards={this.props.addCards}/>}
+                <h1>Current IQ: {this.props.iq}</h1>
                 {this.props.submitNewScore && <SubmitScore addIq={this.props.addIq} currentCards={this.props.currentCards} iq={this.props.iq} currentUser={this.props.currentUser.id}/>}
                 {this.props.gameStarted && <Cards isMatch={this.props.isMatch} currentCards={this.props.currentCards} flipCards={this.props.flipCards} flipCard={this.props.flipCard}/>}
             </div>

@@ -62,7 +62,8 @@ export default function manageUsers(state = {
         ...state,
         currentCards: action.cards,
         submitted: false,
-        gameStarted: true
+        gameStarted: true,
+        iq: 100
       }
 
     case 'FLIP_CARDS':
