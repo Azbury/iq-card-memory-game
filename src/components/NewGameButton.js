@@ -2,25 +2,28 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import {v1 as uuid} from "uuid"
 
+//NewGameButton
+//Button that will start a new game from the user profile page. This will add a new set of cards to game that will be randomized in order by the shuffle method.
 class NewGameButton extends Component {
 
     state = {
-        cards:this.shuffle(['camel', 'cat', 'dog', 'elephant', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger', 'camel', 'cat', 'dog', 'elephant', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']).map(e => { return {name: e, flipped: true, id: uuid()}}),
+        cards: this.shuffle(['camel', 'cat', 'dog', 'elephant', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger',
+                            'camel', 'cat', 'dog', 'elephant', 'hippo', 'lion', 'mouse', 'ostrich', 'raccoon', 'tiger']).map(e => { return {name: e, flipped: true, id: uuid()}}),
     }
 
-    shuffle(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
+    shuffle(cards) {
+        var current = cards.length, temp, random;
       
-        while (0 !== currentIndex) {
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
+        while (0 !== current) {
+          random = Math.floor(Math.random() * current);
+          current -= 1;
       
-          temporaryValue = array[currentIndex];
-          array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
+          temp = cards[current];
+          cards[current] = cards[random];
+          cards[random] = temp;
         }
       
-        return array;
+        return cards;
     }
 
     handleClick(event) {
