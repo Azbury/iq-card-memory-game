@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Cards from '../components/Cards'
+import Cards from './CardsContainer'
 import { connect } from 'react-redux'
 import { addUser } from '../actions/addUser'
 import SubmitScore from '../components/SubmitScore'

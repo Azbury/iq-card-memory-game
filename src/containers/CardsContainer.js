@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import FlipCard from './FlipCard'
+import FlipCard from '../components/FlipCard'
 
-class Cards extends Component {
+//Cards
+class CardsContainer extends Component {
 
     state = {
         hideFlipCardsBack: false,
@@ -58,4 +59,4 @@ class Cards extends Component {
     }
 }
   
-export default Cards;
+export default CardsContainer
