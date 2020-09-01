@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
 //CreateUserButton
-//Button on the landing page where the user will click to get to the user route where they will enter their username
+//Button on the landing page where the user will click to get to the user route where they will enter their username.
 class CreateUserButton extends Component {
 
     handleClick(event) {
