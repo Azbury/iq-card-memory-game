@@ -30,7 +30,7 @@ const mapStateToProps = state => ({ currentUser: state.currentUser, userSubmitte
 
 const mapDispatchToProps = dispatch => ({
     addUser: username => dispatch(addUser(username)),
-    newUser: username => dispatch({type: 'NEW_USER_BUTTON', username}),
+    newUser: ( )=> dispatch({type: 'NEW_USER_BUTTON'}),
     checkTopIqs: userId => dispatch(checkTopIqs(userId)),
     addCards: cards => dispatch({type: 'ADD_CARDS', cards})
 })
