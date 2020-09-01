@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+//SubmitScore
+//Button used to submit a score when done the game
 class SubmitScore extends Component {
 
     state = {
@@ -8,6 +10,7 @@ class SubmitScore extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
+        //checking to see if game is complete or not before submitting.
         if (this.props.currentCards.every(e => e.flipped === true)) {
             this.props.addIq(this.props.iq, this.props.currentUser)
             this.setState({
@@ -24,9 +27,7 @@ class SubmitScore extends Component {
         return (
             <div>
                 <h1 className={this.state.gameDone === false ? "hidden" : ""}>You are not done the game yet!</h1>
-                <form onSubmit={(event) => this.handleSubmit(event)}>
-                    <input className="button" type="submit" value="Submit IQ Score"/>
-                </form>
+                <button className="button" onClick={(event) => this.handleSubmit(event)}>Submit IQ Score</button>
             </div>
         )
     }
