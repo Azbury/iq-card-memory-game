@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 //NewUserButton
-//Button that allows the user to create a new user name or for a new player to start playing the game
+//Button that allows the user to create a new user name or for a new player to start playing the game.
 class NewUserButton extends Component {
 
     handleClick(event) {
