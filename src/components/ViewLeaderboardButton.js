@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 
+//ViewLeaderboardButton
+//Button used to travel to the leaderboard page
 class ViewLeaderboardButton extends Component {
 
     handleClick(event) {
