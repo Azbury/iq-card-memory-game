@@ -6,9 +6,11 @@ import FlipCard from '../components/FlipCard'
 class CardsContainer extends Component {
 
     state = {
+        //hides start game button after being pressed
         hideFlipCardsBack: false,
     }
 
+    //Flips card to hide the pictures once the user starts the game
     flipCardsBack(event) {
         event.preventDefault()
         this.props.flipCards()
