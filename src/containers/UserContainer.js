@@ -8,6 +8,8 @@ import { checkTopIqs } from '../actions/checkTopIqs'
 import NewGameButton from '../components/NewGameButton'
 import ViewLeaderboardButton from '../components/ViewLeaderboardButton'
 
+//UserContainer
+//Holds all the components for the user page
 class UserContainer extends Component {
     render () {
         return (
