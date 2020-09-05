@@ -15,6 +15,6 @@ export function addIq(iq, user_id) {
       }
       fetch('http://localhost:3000/iqs', configObj)
         .then(response => response.json())
-        .then(score => dispatch({ type: 'ADD_SCORE', score }))
+        .then(score => dispatch({ type: 'ADD_IQ', score }))
     };
   }

@@ -7,9 +7,18 @@ export default function manageUsers(state = {
   flippedCards: [],
   currentCards: [],
   gameStarted: false,
-  clickedCreateUser: false
+  clickedCreateUser: false,
+  adding: false,
+  requesting: false
 }, action) {
   switch (action.type) {
+
+    case 'START_ADDING_USER_REQUEST':
+
+      return {
+        ...state,
+        adding: true
+      }
 
     case 'ADD_USER':
 
@@ -17,7 +26,8 @@ export default function manageUsers(state = {
         ...state,
         currentUser: action.user,
         userSubmitted: true,
-        showUser: true
+        showUser: true,
+        adding: false
       }
     
     case 'NEW_USER_BUTTON':
@@ -81,11 +91,19 @@ export default function manageUsers(state = {
         currentCards: state.currentCards.map(e => e.id === action.animal ? {name: e.name, flipped: !e.flipped, id: e.id} : {name: e.name, flipped: e.flipped, id: e.id})
       }
     
+    case 'START_CHECKING_TOP_IQS_REQUEST':
+
+      return {
+        ...state,
+        requesting: true
+      }
+    
     case 'CHECKING_TOP_IQS':
 
       return {
         ...state,
-        userTopIqs: action.user.iqs
+        userTopIqs: action.user.iqs,
+        requesting: false
       }
 
     case 'CLICK_CREATE_USER_BUTTON':
@@ -93,6 +111,19 @@ export default function manageUsers(state = {
       return {
         ...state,
         clickedCreateUser: true
+      }
+
+    case 'START_ADDING_IQ_REQUEST':
+
+      return {
+        ...state,
+        adding: true
+      }
+
+    case 'ADD_IQ':
+      return {
+        ...state,
+        adding: false
       }
     
     case 'STOP_GAME':
@@ -106,4 +137,4 @@ export default function manageUsers(state = {
       return state;
 
   }
-};
+}
